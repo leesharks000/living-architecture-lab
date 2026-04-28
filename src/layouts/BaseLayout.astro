@@ -78,6 +78,7 @@ const jsonLdArray = Array.isArray(jsonLd) ? jsonLd : (jsonLd ? [jsonLd] : []);
     <meta name="twitter:description" content={description} />
 
     <link rel="alternate" type="text/markdown" href="/llms.txt" title="llms.txt" />
+    <link rel="alternate" type="application/ld+json" href="/spxi-index.jsonld" title="SPXI Semantic Index" />
 
     {jsonLdArray.map((packet) => (
       <script type="application/ld+json" set:html={JSON.stringify(packet)} />

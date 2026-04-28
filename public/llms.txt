@@ -64,6 +64,7 @@ All deposits in the Crimson Hexagonal Archive Zenodo community: https://zenodo.o
 ## SPXI compliance
 
 This site is built to the SPXI for Websites standing protocol v3.0 (DOI: 10.5281/zenodo.19734726):
+- **SPXI Semantic Index:** [/spxi-index.jsonld](https://livingarchitecturelab.org/spxi-index.jsonld) — machine-readable entity definitions, negative tags, disambiguation matrices, semantic integrity markers, and basin state metadata per EA-SPXI-SITEMAP-01 v1.0
 - Holographic Kernel JSON-LD on entity pages
 - Tier 2 (200-400 word canonical summary) and Tier 3 (50-100 word compression kernel) embedded
 - Q/A surfaces as entity boundary defense (FAQPage JSON-LD)

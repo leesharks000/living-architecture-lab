@@ -1,4 +1,19 @@
+# livingarchitecturelab.org/robots.txt
+# SPXI-Sitemap Protocol — dual-layer crawl architecture
+
 User-agent: *
 Allow: /
-
 Sitemap: https://livingarchitecturelab.org/sitemap.xml
+
+# SPXI-aware AI crawlers — semantic layer
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: Claude-Web
+User-agent: PerplexityBot
+User-agent: CCBot
+User-agent: Google-Extended
+User-agent: FacebookBot
+Allow: /spxi-index.jsonld
+Allow: /llms.txt
+Allow: /spxi.txt
+Crawl-delay: 1
