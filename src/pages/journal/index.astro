@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import DoiLink from '../../components/DoiLink.astro';
 import lalPacket from '../../data/mpai-lal.json';
 
@@ -7,6 +8,9 @@ const title = "Transactions on Substrate Engineering";
 const description = "TSE is the publication arm of the Living Architecture Lab: a DOI-anchored journal for living materials, ecological construction, and substrate-scale design. Editor-in-Chief: Alice Thornburgh.";
 ---
 <PageLayout {title} {description} jsonLd={lalPacket} pageLabel="The Journal">
+  <Breadcrumb current="Journal" />
+
+
   <h1>Transactions on Substrate Engineering</h1>
   <p style="font-size:1.15rem; color:var(--text-dim); font-style:italic;">
     Editor-in-Chief: Alice Thornburgh

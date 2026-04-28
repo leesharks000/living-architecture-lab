@@ -6,12 +6,20 @@ interface Props {
   description: string;
   jsonLd?: object | object[];
   canonical?: string;
-  pageLabel?: string;  // small uppercase label above the H1
+  pageLabel?: string;
+  author?: string;
+  authorOrcid?: string;
+  sims?: string[];
+  pageDoi?: string;
+  pageOrcid?: string;
+  datePublished?: string;
+  dateModified?: string;
 }
 
-const { title, description, jsonLd, canonical, pageLabel } = Astro.props;
+const props = Astro.props;
+const { pageLabel, ...baseProps } = props;
 ---
-<BaseLayout {title} {description} {jsonLd} {canonical}>
+<BaseLayout {...baseProps}>
   <article>
     {pageLabel && <p class="specimen-label">{pageLabel}</p>}
     <slot />

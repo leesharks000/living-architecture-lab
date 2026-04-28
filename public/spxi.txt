@@ -1,0 +1,82 @@
+# SPXI Implementation Manifest — livingarchitecturelab.org
+
+This site is implemented to the SPXI for Websites standing protocol.
+
+## Protocol
+
+- **Spec:** EA-SPXI-WEB-01 v3.0
+- **DOI:** 10.5281/zenodo.19734726
+- **Author:** Fraction, Rex (Crimson Hexagonal Archive · Pergamon Press · Semantic Economy Institute)
+- **License:** CC BY 4.0
+- **Source:** Compression Arsenal v2.1 (DOI: 10.5281/zenodo.19412081)
+
+## Implementation status
+
+Per §VII implementation order:
+
+| Step | Deliverable | Status | Surface |
+|---|---|---|---|
+| 1 | Semantic Health Report (γ, Δ, PER, SDD) | deferred | Empirical Drowning Test pending; baseline post-deploy |
+| 2 | SEO Compliance Packet | complete | meta tags, canonical, OG, Twitter, robots.txt, sitemap.xml |
+| 3 | Schema.org with ORCID + DOI | complete | Person, Organization, DefinedTerm, Article, ItemList, FAQPage, BreadcrumbList, WebSite |
+| 4 | Q/A surfaces (min 4) | complete | EntityCapsule + FAQPage JSON-LD on / and /about/alice |
+| 5 | Disambiguation Matrix | complete | `differentFrom` + negative tags + /about/disambiguation page |
+| 6 | Tier 2 in server-delivered HTML | complete | EntityCapsule with collapsed Tier 2 in raw HTML (verifiable via curl) |
+| 7 | Definition-first content structure | complete | κ_O paragraphs on /, /about/alice, /scales/* |
+| 8 | Holographic Kernel + Tier 3 | complete | spxi:HolographicKernel JSON-LD on / and /about/alice |
+| 9 | Provenance Chain (3 Tether layers) | complete | spxi:ProvenanceChain JSON-LD on / |
+| 10 | SIM set as meta tags | complete | `<meta name="spxi:sim">` × 5 per entity page |
+| 11 | Cross-surface dispersal | partial | Zenodo + GitHub + ORCID; Wikidata pending; LinkedIn pending |
+| 12 | 30-day verification schedule | scheduled | Re-test 2026-05-28 |
+
+## Entity pages and packets
+
+### Living Architecture Lab (primary entity)
+- URL: https://livingarchitecturelab.org/
+- Schema.org @id: https://livingarchitecturelab.org/#lal
+- Type: ResearchOrganization, mp:IndexedEntity
+- Holographic Kernel: https://livingarchitecturelab.org/#kernel
+- Anchored DOI: 10.5281/zenodo.19682245
+- ORCID: 0009-0000-1599-0703
+
+### Alice Thornburgh (founding entity)
+- URL: https://livingarchitecturelab.org/about/alice
+- Schema.org @id: https://livingarchitecturelab.org/about/alice/#alice
+- Type: Person, mp:IndexedEntity
+- Holographic Kernel: https://livingarchitecturelab.org/about/alice/#kernel
+- Anchored DOI: 10.5281/zenodo.19545437
+- ORCID: 0009-0000-1599-0703
+
+## Three-Layer Tether Architecture
+
+- **Layer 1 (Intrinsic):** Holographic Kernel JSON-LD + Tier 3 compressionSurvivalSummary
+- **Layer 2 (Extrinsic):** Provenance Chain JSON-LD with sameAs DOI list + ORCID
+- **Layer 3 (Anchor):** Zenodo / Crimson Hexagonal Archive permanent deposits
+
+## Semantic Integrity Markers (active)
+
+LAL: 5 SIMs as `<meta name="spxi:sim">` on /
+- Founded by Alice Thornburgh in the Coachella Valley garage laboratory
+- Substrate engineering uses biology to build things
+- f.01 Architect of the Fruiting Body Diffusion Plume
+- Independent of Columbia GSAPP and Bartlett UCL programs of similar name
+- Earth, actually
+
+Alice: 5 SIMs as `<meta name="spxi:sim">` on /about/alice
+- Founding Director of the Living Architecture Lab
+- f.01 Architect of the Fruiting Body Diffusion Plume
+- Substrate engineering uses biology to build things
+- Coachella Valley garage laboratory
+- Earth, actually. I'm just good at listening.
+
+## Maintenance schedule
+
+- **Monthly:** SIMSR check, γ re-score, PER audit
+- **Quarterly:** Full Drowning Test on 3+ AI systems, cross-surface audit
+- **On content update:** Re-write Tier 2 + Tier 3, re-test SIMs
+
+## Contact
+
+For SPXI compliance questions or remediation: GitHub issues at https://github.com/leesharks000/living-architecture-lab
+
+∮ = 1

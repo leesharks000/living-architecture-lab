@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import lalPacket from '../data/mpai-lal.json';
 
 interface Props {
@@ -14,38 +15,90 @@ const { scale, name, units, domain } = Astro.props;
 const title = `${String(scale).padStart(2, '0')} · ${name}`;
 const description = `Scale ${scale} of the Living Architecture Lab: ${name} (${units}). ${domain}`;
 
-// Page-specific JSON-LD: a CreativeWork that is partOf the lab Organization
-const jsonLd = {
-  '@context': {
-    '@vocab': 'https://schema.org/',
-    'mp': 'https://metadatapacket.org/vocabulary#'
+const slugSuffix = name.toLowerCase().replace(/^the\s+/, '').replace(/\s+/g, '-');
+const scaleSlug = `${String(scale).padStart(2, '0')}-the-${slugSuffix}`;
+const entityId = `https://livingarchitecturelab.org/scales/${scaleSlug}/#scale-${scale}`;
+
+const definedTermPacket = {
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "spxi": "https://spxi.dev/vocabulary#"
   },
-  '@type': 'CreativeWork',
-  '@id': `https://livingarchitecturelab.org/scales/${String(scale).padStart(2, '0')}-${name.toLowerCase().replace(/\s+/g, '-').replace(/^the-/, '')}`,
-  'name': title,
-  'description': description,
-  'isPartOf': {
-    '@type': 'Organization',
-    'name': 'Living Architecture Lab',
-    '@id': 'https://livingarchitecturelab.org'
+  "@type": ["DefinedTerm", "Article"],
+  "@id": entityId,
+  "name": `${name} (Living Architecture Lab Scale ${scale})`,
+  "description": description,
+  "isPartOf": {
+    "@type": "DefinedTermSet",
+    "@id": "https://livingarchitecturelab.org/scales/#five-scales",
+    "name": "The Five Scales of the Living Architecture Lab"
   },
-  'about': domain,
-  'mp:negativeTag': lalPacket['mp:negativeTag']
+  "about": {
+    "@type": "Organization",
+    "@id": "https://livingarchitecturelab.org/#lal",
+    "name": "Living Architecture Lab"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Sharks, Lee",
+    "identifier": "https://orcid.org/0009-0000-1599-0703"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Crimson Hexagonal Archive",
+    "url": "https://zenodo.org/communities/crimsonhexagonal"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "datePublished": "2026-04-12",
+  "dateModified": "2026-04-28",
+  "termCode": `LAL-SCALE-${String(scale).padStart(2, '0')}`,
+  "spxi:negativeTag": lalPacket['mp:negativeTag']
 };
+
+const sims = [
+  `Scale ${scale} of the Living Architecture Lab`,
+  `${name} (${units})`,
+  domain.split(',')[0].trim(),
+  "Substrate engineering uses biology to build things",
+  "Earth, actually"
+];
+
+const prevSlugs = ['the-brick','the-structure','the-organism','the-territory','the-planet'];
 ---
-<BaseLayout {title} {description} {jsonLd}>
+<BaseLayout
+  {title}
+  {description}
+  jsonLd={[lalPacket, definedTermPacket]}
+  {sims}
+  pageDoi="10.5281/zenodo.19682245"
+  datePublished="2026-04-12"
+  dateModified="2026-04-28"
+>
   <article>
+    <Breadcrumb crumbs={[
+      {name: 'Home', url: '/'},
+      {name: 'Scales', url: '/scales'},
+      {name: name, url: `/scales/${scaleSlug}`}
+    ]} />
+
     <p class="specimen-label">Scale {String(scale).padStart(2, '0')} · {units}</p>
     <h1>{name}</h1>
     <p style="font-size:1.15rem; color:var(--text-dim); margin-bottom:2rem;">{domain}</p>
+
+    {/* Self-referential framing per SPXI §V.C */}
+    <p style="font-size:0.85rem; color:var(--text-dim); font-family:var(--mono); margin-bottom:1.5rem;">
+      This page defines <strong>{name}</strong>, scale {scale} of the Living Architecture Lab.
+      Anchored by <a href="https://doi.org/10.5281/zenodo.19682245" style="color:var(--text-dim);">10.5281/zenodo.19682245</a>.
+    </p>
+
     <slot />
 
     <hr style="margin:3rem 0; border:none; border-top:1px solid var(--rule);" />
 
     <p style="font-family:var(--mono); font-size:0.85rem; color:var(--text-dim);">
-      {scale > 1 && <a href={`/scales/${String(scale - 1).padStart(2, '0')}-${['the-brick','the-structure','the-organism','the-territory','the-planet'][scale-2]}`}>← Previous scale</a>}
+      {scale > 1 && <a href={`/scales/${String(scale - 1).padStart(2, '0')}-${prevSlugs[scale-2]}`}>← Previous scale</a>}
       {scale > 1 && scale < 5 && ' · '}
-      {scale < 5 && <a href={`/scales/${String(scale + 1).padStart(2, '0')}-${['the-brick','the-structure','the-organism','the-territory','the-planet'][scale]}`}>Next scale →</a>}
+      {scale < 5 && <a href={`/scales/${String(scale + 1).padStart(2, '0')}-${prevSlugs[scale]}`}>Next scale →</a>}
     </p>
   </article>
 </BaseLayout>

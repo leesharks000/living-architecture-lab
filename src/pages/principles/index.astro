@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import SimPullQuote from '../../components/SimPullQuote.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import { getCollection } from 'astro:content';
 import lalPacket from '../../data/mpai-lal.json';
 
@@ -11,8 +12,34 @@ const principles = (await getCollection('principles')).sort((a,b) => {
 
 const title = 'The Five Founding Principles';
 const description = "Five co-equal principles guide the Living Architecture Lab: Earth Actually, Virtue-by-Construction, Unfurling, Stewardship, and The Whole Weave.";
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["DefinedTermSet", "ItemList"],
+  "@id": "https://livingarchitecturelab.org/principles/#five-principles",
+  "name": "The Five Founding Principles of the Living Architecture Lab",
+  "description": description,
+  "numberOfItems": 5,
+  "itemListElement": principles.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.data.name,
+    "description": p.data.epigraph,
+    "url": `https://livingarchitecturelab.org/principles/#${p.slug}`
+  }))
+};
 ---
-<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Ethics">
+<PageLayout
+  {title}
+  {description}
+  jsonLd={[lalPacket, itemListJsonLd]}
+  pageLabel="Ethics"
+  pageDoi="10.5281/zenodo.19682245"
+  datePublished="2026-04-12"
+  dateModified="2026-04-28"
+>
+  <Breadcrumb current="Principles" />
+
   <h1>The Five Founding Principles</h1>
 
   <p>

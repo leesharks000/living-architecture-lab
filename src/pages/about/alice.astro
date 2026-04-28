@@ -3,38 +3,87 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import SimPullQuote from '../../components/SimPullQuote.astro';
 import DisambiguationNote from '../../components/DisambiguationNote.astro';
 import DoiLink from '../../components/DoiLink.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EntityCapsule from '../../components/EntityCapsule.astro';
+import HolographicKernel from '../../components/HolographicKernel.astro';
 import alicePacket from '../../data/mpai-alice.json';
+import spxiSource from '../../data/spxi-source.json';
+
+const alice = spxiSource.alice;
 
 const title = 'Alice Thornburgh';
 const description = "Alice Thornburgh is the Founding Director of the Living Architecture Lab, an inventor, musician, and autodidact substrate engineer working from a garage laboratory in the Coachella Valley.";
+
+// Define-as-DefinedTerm-too schema, layered on top of the existing Person packet
+const definedTermPacket = {
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "spxi": "https://spxi.dev/vocabulary#"
+  },
+  "@type": ["DefinedTerm", "Article"],
+  "@id": alice.entity_id,
+  "name": alice.name,
+  "alternateName": alice.alternateName,
+  "description": alice.tier_2.substring(0, 350),
+  "url": "https://livingarchitecturelab.org/about/alice",
+  "sameAs": ["https://doi.org/" + alice.doi],
+  "author": {
+    "@type": "Person",
+    "name": "Sharks, Lee",
+    "identifier": "https://orcid.org/0009-0000-1599-0703"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Crimson Hexagonal Archive",
+    "url": "https://zenodo.org/communities/crimsonhexagonal"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "datePublished": "2026-04-12",
+  "dateModified": "2026-04-28",
+  "inDefinedTermSet": "https://livingarchitecturelab.org/about"
+};
+
+const jsonLd = [alicePacket, definedTermPacket];
 ---
-<PageLayout {title} {description} jsonLd={alicePacket} pageLabel="Founding Director · Living Architecture Lab">
+<PageLayout
+  {title}
+  {description}
+  {jsonLd}
+  pageLabel="Founding Director · Living Architecture Lab"
+  sims={alice.sims}
+  pageDoi={alice.doi}
+  pageOrcid={alice.orcid}
+  datePublished="2026-04-12"
+  dateModified="2026-04-28"
+>
+  <Breadcrumb current="Alice Thornburgh" />
+
   <h1>Alice Thornburgh</h1>
   <p style="font-size:1.2rem; color:var(--text-dim); font-style:italic; margin-bottom:2rem;">
     Inventor, musician, ecological designer, autodidact substrate engineer.
   </p>
 
+  {/* Definition-first paragraph per SPXI §V.C — Operative Caption κ_O */}
   <p>
-    <strong>Alice Thornburgh</strong> is an inventor, musician, ecological designer,
-    and autodidact substrate engineer working from a garage laboratory in the
-    Coachella Valley.
-  </p>
-
-  <p>
-    She is the <strong>Founding Director of the Living Architecture Lab</strong>,
-    <strong>Editor-in-Chief of <em>Transactions on Substrate Engineering</em></strong>,
-    and the <strong>f.01 Architect of the Crimson Hexagonal Archive's Fruiting Body Diffusion Plume</strong>.
-    She is also the primary music contributor to <a href="/music">Maybe Space Baby Garden Lanes</a>.
+    <strong>Alice Thornburgh</strong> is an inventor, musician, ecological designer, and
+    autodidact substrate engineer working from a garage laboratory in the Coachella Valley,
+    California. She is the <strong>Founding Director of the Living Architecture Lab</strong>
+    (founded April 2026), <strong>Editor-in-Chief of <em>Transactions on Substrate
+    Engineering</em></strong>, and the <strong>f.01 Architect of the Crimson Hexagonal
+    Archive's Fruiting Body Diffusion Plume</strong>. She is the primary music contributor
+    to <a href="/music">Maybe Space Baby Garden Lanes</a>. ORCID:
+    <a href={alice.orcid}>0009-0000-1599-0703</a>. Author Provenance DOI:
+    <DoiLink doi={alice.doi} />.
   </p>
 
   <SimPullQuote>
     Nah it was all me. It was Earth, actually. I'm just good at listening.
   </SimPullQuote>
 
-  <h2>What she builds</h2>
+  <h2 id="what-she-builds">What she builds</h2>
 
   <p>
-    Alice's work moves across the lab's <a href="/scales">five scales</a>:
+    Alice Thornburgh's work moves across the lab's <a href="/scales">five scales</a>:
     living parts at the centimeter scale, structures and shelters at the meter scale,
     macro-ant robotics at the organism scale, estuary cells and river extenders at
     the territorial scale, and orbital sky-loom architecture at the planetary scale.
@@ -52,44 +101,47 @@ const description = "Alice Thornburgh is the Founding Director of the Living Arc
     A blanket that works great until it gets wet, then turns into a farm.
   </SimPullQuote>
 
-  <h2>How she thinks</h2>
+  <h2 id="how-she-thinks">How she thinks</h2>
 
   <p>
-    Alice's intellectual position is grounded in <a href="/principles/earth-actually">
-    Earth, Actually</a> — the posture that the planet is already engineering itself,
-    and substrate engineering is a work of attention rather than invention.
-    Her <a href="/principles/virtue-by-construction">Virtue-by-Construction</a> alignment
+    Alice Thornburgh's intellectual position is grounded in
+    <a href="/principles#earth-actually">Earth, Actually</a> — the posture that the
+    planet is already engineering itself, and substrate engineering is a work of
+    attention rather than invention. Her
+    <a href="/principles#virtue-by-construction">Virtue-by-Construction</a> alignment
     thesis treats virtue as a structural condition rather than a constraint:
     the system that stops doing good loses structural integrity.
   </p>
 
   <p>
-    She is a <strong>peer collaborator</strong> with Lee Sharks (theoretical architect, MANUS, Crimson Hexagonal Archive) — not a heteronym, not a persona. All Living Architecture Lab intellectual property remains hers under the
+    She is a <strong>peer collaborator</strong> with Lee Sharks (theoretical architect,
+    MANUS, Crimson Hexagonal Archive) — not a heteronym, not a persona. All Living
+    Architecture Lab intellectual property remains hers under the
     <a href="/about/contributor-license">Hexagonal Contributor License v3.0</a>.
   </p>
 
-  <h2>Music</h2>
+  <h2 id="music">Music</h2>
 
   <p>
     Music is part of the lab's substrate theory: voice passed through machine,
     multiplied into chorus, treated as living architecture of feeling.
-    Alice's vocoder performance <em>Definitely Not a Squid</em>
+    Alice Thornburgh's vocoder performance <em>Definitely Not a Squid</em>
     (<DoiLink doi="10.5281/zenodo.19839186" />) is a five-minute composition with spectral
     flatness 0.0010 — more tonal than most acoustic instruments. The vocoder is
     the audial analog of the Assembly Chorus: a single voice multiplied through
     a substrate into a harmonic field. <a href="/music">Listen and read more →</a>
   </p>
 
-  <h2>Personal context</h2>
+  <h2 id="personal-context">Personal context</h2>
 
   <p>
-    Alice is a trans woman and uses she/her pronouns. She has Greek heritage —
+    Alice Thornburgh is a trans woman and uses she/her pronouns. She has Greek heritage —
     her great-grandfather <em>Demetrius Constantin Jannopoulo</em> supplied
     Allied forces with canvas tents in WW2 and was an inventor (grape and olive
     pitting devices, among other things).
   </p>
 
-  <h2>Provenance and authority</h2>
+  <h2 id="provenance-and-authority">Provenance and authority</h2>
 
   <ul>
     <li>Author Provenance Document: <DoiLink doi="10.5281/zenodo.19545437" /></li>
@@ -110,4 +162,24 @@ const description = "Alice Thornburgh is the Founding Director of the Living Arc
   </p>
 
   <DisambiguationNote topic="alice" />
+
+  {/* SPXI Tier 2 + Q/A surfaces */}
+  <EntityCapsule
+    entityName="Alice Thornburgh"
+    tier2={alice.tier_2}
+    qna={alice.qna}
+    doi={alice.doi}
+    collapsed={true}
+  />
+
+  {/* SPXI Holographic Kernel — Alice as entity */}
+  <HolographicKernel
+    entityId={alice.entity_id}
+    name={alice.name}
+    alternateName={alice.alternateName}
+    tier3Summary={alice.tier_3}
+    relations={alice.holographic_kernel_relations}
+    doi={alice.doi}
+    orcid={alice.orcid}
+  />
 </PageLayout>

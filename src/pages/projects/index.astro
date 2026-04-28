@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import { getCollection } from 'astro:content';
 import lalPacket from '../../data/mpai-lal.json';
 
@@ -9,8 +10,38 @@ const scaleNames = ['','Brick','Structure','Organism','Territory','Planet'];
 
 const title = 'Projects';
 const description = "Concrete artifacts of the Living Architecture Lab, grouped by scale: myceliated bricks, tater tents, macro-ant robotics, estuary cells, river extenders, sky looms, Garden Moon.";
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://livingarchitecturelab.org/projects/#project-list",
+  "name": "Living Architecture Lab — Projects",
+  "description": description,
+  "numberOfItems": projects.length,
+  "itemListElement": projects.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "CreativeWork",
+      "name": p.data.name,
+      "description": p.data.description,
+      "creativeWorkStatus": p.data.status,
+      "about": `Scale ${p.data.scale}: ${scaleNames[p.data.scale]}`
+    }
+  }))
+};
 ---
-<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Artifacts">
+<PageLayout
+  {title}
+  {description}
+  jsonLd={[lalPacket, itemListJsonLd]}
+  pageLabel="Artifacts"
+  pageDoi="10.5281/zenodo.19682245"
+  datePublished="2026-04-12"
+  dateModified="2026-04-28"
+>
+  <Breadcrumb current="Projects" />
+
   <h1>Projects</h1>
 
   <p>

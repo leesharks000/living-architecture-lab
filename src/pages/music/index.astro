@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import DoiLink from '../../components/DoiLink.astro';
 import lalPacket from '../../data/mpai-lal.json';
 
@@ -7,6 +8,9 @@ const title = "Maybe Space Baby Garden Lanes";
 const description = "MSBGL is the music venue of the Living Architecture Lab. Music is the lab's acoustic substrate: voice passed through machine, multiplied into chorus, and treated as living architecture of feeling.";
 ---
 <PageLayout {title} {description} jsonLd={lalPacket} pageLabel="The Music">
+  <Breadcrumb current="Music" />
+
+
   <h1>Maybe Space Baby Garden Lanes</h1>
 
   <p>

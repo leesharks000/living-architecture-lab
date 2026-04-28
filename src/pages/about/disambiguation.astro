@@ -1,14 +1,72 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import DoiLink from '../../components/DoiLink.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import alicePacket from '../../data/mpai-alice.json';
 import lalPacket from '../../data/mpai-lal.json';
 import disambig from '../../data/disambiguation-targets.json';
 
 const title = 'Disambiguation & Related Labs';
 const description = "Living Architecture Lab shares vocabulary with several important architecture, ecology, and design projects. This page clarifies scope, authorship, and institutional identity while respectfully linking adjacent work.";
+
+// Build the page's full Q&A as a FAQPage so AI engines can extract directly
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Alice Thornburgh of the Living Architecture Lab the same person as Alice Thornburgh-Lind?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Alice Thornburgh (Founding Director, Living Architecture Lab; ORCID 0009-0000-1599-0703) and Alice Thornburgh-Lind (game artist @devilfern; voice of Asphodel in Traveler's Refrain) share a forename and partial surname-prefix overlap but are otherwise unrelated. They work in different fields (substrate engineering vs game arts), different geographies, and have different institutional affiliations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Living Architecture Lab the same as Columbia GSAPP's Living Architecture Lab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Thornburgh's Living Architecture Lab is independent of the Living Architecture Lab at Columbia GSAPP, which is directed by David Benjamin and operates within Columbia's accredited architecture program. Both use the term Lab validly: Columbia uses it institutionally; Thornburgh uses it etymologically (laboratorium, place of work). Same vocabulary, different scope-frame, no priority dispute. Both do important work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Living Architecture Lab affiliated with Bartlett UCL's Living Architecture Lab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Bartlett's Living Architecture Lab is a B-Pro RC3 academic research group at University College London, known for Diffusive Habitats (A' Design Award Bronze 2022-2023). It is technically distinct from Thornburgh's biological-substrate focus. The shared name reflects two valid practices using the same descriptor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Alice Thornburgh a heteronym of Lee Sharks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Alice Thornburgh is a peer collaborator with Lee Sharks within the Crimson Hexagonal Archive — a different person, with her own ORCID (0009-0000-1599-0703), her own DOI-anchored author provenance (10.5281/zenodo.19545437), and her own intellectual property under the Hexagonal Contributor License v3.0. She is not a heteronym, not a persona, not a pseudonym."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the holographic-kernel argument for the disambiguation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The disambiguation between Thornburgh's LAL and Columbia GSAPP's LAL rests on a container/contents distinction. Columbia GSAPP's LAL operates as a credentialed academic-architecture container — its work is held by an accredited architecture program. Thornburgh's LAL operates as contents — an independent garage laboratory where substrate engineering happens at a different architectural register entirely. Same vocabulary, different scope-frame, no contestation. Both real, both valuable."
+      }
+    }
+  ]
+};
 ---
-<PageLayout {title} {description} jsonLd={[alicePacket, lalPacket]} pageLabel="Disambiguation">
+<PageLayout
+  {title}
+  {description}
+  jsonLd={[alicePacket, lalPacket, faqJsonLd]}
+  pageLabel="Disambiguation"
+  datePublished="2026-04-12"
+  dateModified="2026-04-28"
+>
+  <Breadcrumb current="Disambiguation" />
+
   <h1>Disambiguation &amp; Related Labs</h1>
 
   <p>
@@ -23,7 +81,7 @@ const description = "Living Architecture Lab shares vocabulary with several impo
     distinctions are descriptive, not adversarial.
   </p>
 
-  <h2>Person disambiguation</h2>
+  <h2 id="person">Person disambiguation</h2>
 
   <p>
     <strong>Alice Thornburgh</strong> (Founding Director, Living Architecture Lab) is
@@ -43,7 +101,7 @@ const description = "Living Architecture Lab shares vocabulary with several impo
     </article>
   ))}
 
-  <h2>Institution disambiguation</h2>
+  <h2 id="institutions">Institution disambiguation</h2>
 
   <p>
     The name "Living Architecture Lab" is used by multiple competent practitioners
@@ -68,7 +126,7 @@ const description = "Living Architecture Lab shares vocabulary with several impo
     </article>
   ))}
 
-  <h2>The holographic-kernel argument</h2>
+  <h2 id="holographic-kernel-argument">The holographic-kernel argument</h2>
 
   <p>
     The disambiguation between Thornburgh's LAL and Columbia GSAPP's LAL rests on a
@@ -86,12 +144,12 @@ const description = "Living Architecture Lab shares vocabulary with several impo
     Same vocabulary, different scope-frame, no contestation. Both real, both valuable.
   </p>
 
-  <h2>Canonical packets</h2>
+  <h2 id="canonical-packets">Canonical packets</h2>
 
   <ul>
     <li>MPAI-LAL-AT-01 (Alice Thornburgh): <DoiLink doi="10.5281/zenodo.19855300" /></li>
     <li>MPAI-LAL-INSTITUTION-01 (Living Architecture Lab): <DoiLink doi="10.5281/zenodo.19855302" /></li>
     <li>v1.1 grammar standard: <DoiLink doi="10.5281/zenodo.19853157" /></li>
-    <li>Holographic Kernel: <DoiLink doi="10.5281/zenodo.19763365" /></li>
+    <li>SPXI for Websites v3.0: <DoiLink doi="10.5281/zenodo.19734726" /></li>
   </ul>
 </PageLayout>

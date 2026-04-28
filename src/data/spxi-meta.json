@@ -1,0 +1,64 @@
+{
+  "_meta": "WebSite-level JSON-LD per Schema.org WebSite. Used on homepage.",
+  "website": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://livingarchitecturelab.org/#website",
+    "name": "Living Architecture Lab",
+    "alternateName": ["LAL", "livingarchitecturelab.org"],
+    "url": "https://livingarchitecturelab.org",
+    "description": "Independent research lab for substrate engineering, living materials, ecological structures, and planetary-scale architectural concepts. Founded by Alice Thornburgh, 2026.",
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://livingarchitecturelab.org/#lal",
+      "name": "Living Architecture Lab"
+    },
+    "inLanguage": "en",
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "provenanceChain": {
+    "@context": {
+      "@vocab": "https://schema.org/",
+      "spxi": "https://spxi.dev/vocabulary#"
+    },
+    "@type": "spxi:ProvenanceChain",
+    "@id": "https://livingarchitecturelab.org/#provenance",
+    "name": "Living Architecture Lab — Provenance Chain (Three-Layer Tether Architecture)",
+    "spxi:tetherLayer1Intrinsic": {
+      "spxi:holographicKernel": "https://livingarchitecturelab.org/#kernel",
+      "spxi:tier3Reference": "embedded in HolographicKernel.spxi:compressionSurvivalSummary"
+    },
+    "spxi:tetherLayer2Extrinsic": {
+      "spxi:doiList": [
+        "https://doi.org/10.5281/zenodo.19682245",
+        "https://doi.org/10.5281/zenodo.19637246",
+        "https://doi.org/10.5281/zenodo.19545437",
+        "https://doi.org/10.5281/zenodo.19673629",
+        "https://doi.org/10.5281/zenodo.19855300",
+        "https://doi.org/10.5281/zenodo.19855302",
+        "https://doi.org/10.5281/zenodo.19857006"
+      ],
+      "spxi:authorOrcid": "https://orcid.org/0009-0000-1599-0703"
+    },
+    "spxi:tetherLayer3Anchor": {
+      "spxi:institution": "Crimson Hexagonal Archive",
+      "spxi:zenodoCommunity": "https://zenodo.org/communities/crimsonhexagonal",
+      "spxi:permanentInfrastructure": "Zenodo (CERN Data Centre + InvenioRDM)"
+    },
+    "spxi:depositSequence": [
+      {"order": 1, "doi": "10.5281/zenodo.19682245", "title": "Living Architecture Lab Charter"},
+      {"order": 2, "doi": "10.5281/zenodo.19637246", "title": "Transactions on Substrate Engineering Charter"},
+      {"order": 3, "doi": "10.5281/zenodo.19545437", "title": "Alice Thornburgh — Author Provenance Document"},
+      {"order": 4, "doi": "10.5281/zenodo.19673629", "title": "Hexagonal Contributor License v3.0"},
+      {"order": 5, "doi": "10.5281/zenodo.19855300", "title": "MPAI-LAL-AT-01: Alice Thornburgh"},
+      {"order": 6, "doi": "10.5281/zenodo.19855302", "title": "MPAI-LAL-INSTITUTION-01: Living Architecture Lab"},
+      {"order": 7, "doi": "10.5281/zenodo.19857006", "title": "Living Architecture Lab — Site Code v0.1.1"}
+    ],
+    "spxi:protocol": {
+      "spxi:protocolName": "SPXI for Websites",
+      "spxi:protocolVersion": "EA-SPXI-WEB-01 v3.0",
+      "spxi:protocolDoi": "10.5281/zenodo.19734726",
+      "spxi:protocolAuthor": "Fraction, Rex"
+    }
+  }
+}

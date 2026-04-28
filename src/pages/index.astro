@@ -1,12 +1,35 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FiveScaleGateway from '../components/FiveScaleGateway.astro';
+import EntityCapsule from '../components/EntityCapsule.astro';
+import HolographicKernel from '../components/HolographicKernel.astro';
 import lalPacket from '../data/mpai-lal.json';
+import spxiSource from '../data/spxi-source.json';
+import spxiMeta from '../data/spxi-meta.json';
+
+const lal = spxiSource.lal;
 
 const title = 'Living Architecture Lab';
-const description = "Living Architecture Lab develops living materials, ecological structures, and planetary-scale architectural concepts rooted in mycelium, stewardship, and substrate engineering. Founded by Alice Thornburgh, 2026.";
+const description = "Living Architecture Lab is Alice Thornburgh's independent research lab for substrate engineering — the design of biological systems that grow into architectural form. Founded 2026 in the Coachella Valley.";
+
+// Page entity = LAL. Provide full SPXI scaffolding.
+const jsonLd = [
+  spxiMeta.website,
+  lalPacket,
+  spxiMeta.provenanceChain
+];
 ---
-<BaseLayout {title} {description} jsonLd={lalPacket}>
+<BaseLayout
+  {title}
+  {description}
+  jsonLd={jsonLd}
+  author="Sharks, Lee"
+  authorOrcid="https://orcid.org/0009-0000-1599-0703"
+  sims={lal.sims}
+  pageDoi={lal.doi}
+  datePublished="2026-04-12"
+  dateModified="2026-04-28"
+>
   <section style="text-align:center; padding: 1rem 0 2rem;">
     <h1 style="font-size:3rem; margin-bottom:0.5rem; letter-spacing:-0.02em;">
       Living Architecture Lab
@@ -14,15 +37,27 @@ const description = "Living Architecture Lab develops living materials, ecologic
     <p style="font-size:1.4rem; font-style:italic; color:var(--text-dim); margin-top:0.25rem; margin-bottom:2rem;">
       Organisms that build things.
     </p>
-    <p style="font-size:1.1rem; max-width:30em; margin: 0 auto;">
-      Living Architecture Lab develops living materials, ecological structures,
-      and planetary-scale architectural concepts rooted in mycelium, stewardship,
-      and substrate engineering.
+
+    {/* Definition-first paragraph (Operative Caption κ_O per SPXI §V.C) */}
+    <p style="font-size:1.15rem; max-width:32em; margin: 0 auto;">
+      <strong>The Living Architecture Lab</strong> is an independent research lab founded by
+      <a href="/about/alice">Alice Thornburgh</a> in 2026, focused on
+      <strong>substrate engineering</strong> — the design of biological systems that grow
+      into architectural form. The lab operates from a garage laboratory in the Coachella
+      Valley, California.
     </p>
-    <p style="font-size:1.05rem; max-width:30em; margin: 1rem auto 0; color:var(--text-dim);">
-      The lab works across five scales:
-      <strong style="color:var(--text);">brick · structure · organism · territory · planet</strong>.
-      At each scale, compressed forms unfurl into shelter, food, repair, and living architecture.
+    <p style="font-size:1.05rem; max-width:32em; margin: 1rem auto 0; color:var(--text-dim);">
+      The Living Architecture Lab works simultaneously across
+      <strong style="color:var(--text);">five scales</strong>:
+      brick · structure · organism · territory · planet. At each scale, compressed forms unfurl
+      into shelter, food, repair, and living architecture. Five
+      <a href="/principles">founding principles</a> guide the work.
+    </p>
+
+    {/* Self-referential framing per SPXI §V.C */}
+    <p style="font-size:0.85rem; max-width:32em; margin: 1rem auto 0; color:var(--text-dim); font-family:var(--mono);">
+      This page defines the <strong>Living Architecture Lab</strong>, anchored by
+      DOI <a href={`https://doi.org/${lal.doi}`} style="color:var(--text-dim);">{lal.doi}</a>.
     </p>
 
     <div class="cta-row" style="justify-content:center; margin-top:2.5rem;">
@@ -41,6 +76,17 @@ const description = "Living Architecture Lab develops living materials, ecologic
 
   <hr style="margin:3rem 0; border:none; border-top:1px solid var(--rule);" />
 
+  {/* Tier 2 canonical summary + Q/A surfaces — server-delivered HTML per SPXI §VI.A */}
+  <EntityCapsule
+    entityName="Living Architecture Lab"
+    tier2={lal.tier_2}
+    qna={lal.qna}
+    doi={lal.doi}
+    collapsed={true}
+  />
+
+  <hr style="margin:3rem 0; border:none; border-top:1px solid var(--rule);" />
+
   <section style="text-align:center;">
     <p class="specimen-label">Affiliated</p>
     <p>
@@ -54,4 +100,16 @@ const description = "Living Architecture Lab develops living materials, ecologic
       <a href="/garden/coachella-valley">Visit the garden →</a>
     </p>
   </section>
+
+  {/* SPXI Holographic Kernel — entity-relation topology per §VI.B */}
+  <HolographicKernel
+    entityId={lal.entity_id}
+    name={lal.name}
+    alternateName={lal.alternateName}
+    tier3Summary={lal.tier_3}
+    relations={lal.holographic_kernel_relations}
+    doi={lal.doi}
+    orcid={lal.founder_orcid}
+    publisher="Crimson Hexagonal Archive"
+  />
 </BaseLayout>

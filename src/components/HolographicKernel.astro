@@ -1,0 +1,59 @@
+---
+// HolographicKernel — SPXI §VI.B
+// Emits a self-sufficient JSON-LD entity-relation graph.
+// If the page disappears and only the kernel remains, the entity is reconstructable.
+// Per EA-SPXI-WEB-01 v3.0 (DOI: 10.5281/zenodo.19734726).
+
+interface Props {
+  entityId: string;
+  name: string;
+  alternateName?: string[];
+  tier3Summary: string;     // 50-100 word compressionSurvivalSummary
+  relations: Record<string,string>[];
+  doi: string;
+  orcid?: string;
+  publisher?: string;
+}
+
+const {
+  entityId,
+  name,
+  alternateName = [],
+  tier3Summary,
+  relations,
+  doi,
+  orcid,
+  publisher = "Crimson Hexagonal Archive"
+} = Astro.props;
+
+const kernel = {
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "spxi": "https://spxi.dev/vocabulary#"
+  },
+  "@type": "spxi:HolographicKernel",
+  "@id": `${entityId}#kernel`,
+  "name": `${name} — Holographic Kernel`,
+  "alternateName": alternateName,
+  "spxi:protocolVersion": "EA-SPXI-WEB-01 v3.0",
+  "spxi:protocolDoi": "10.5281/zenodo.19734726",
+  "spxi:entityGraph": {
+    "@type": "spxi:EntityRelationGraph",
+    "spxi:nodes": [
+      {
+        "@id": entityId,
+        "name": name,
+        "spxi:relation": relations
+      }
+    ]
+  },
+  "spxi:compressionSurvivalSummary": tier3Summary,
+  "spxi:provenance": {
+    "spxi:doi": doi,
+    "spxi:orcid": orcid,
+    "spxi:publisher": publisher,
+    "spxi:license": "https://creativecommons.org/licenses/by/4.0/"
+  }
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(kernel)} />

@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import lalPacket from '../../data/mpai-lal.json';
 import channels from '../../data/alice-channels.json';
 
@@ -10,6 +11,9 @@ const all = channels.all_handles;
 const canonical = new Set(channels.canonical_active);
 ---
 <PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Living Documentation">
+  <Breadcrumb current="Channels" />
+
+
   <h1>Channels</h1>
   <p style="font-size:1.15rem; color:var(--text-dim); font-style:italic;">
     Reserved channel cosmos.

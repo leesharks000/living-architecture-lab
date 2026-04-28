@@ -1,11 +1,15 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import lalPacket from '../../data/mpai-lal.json';
 
 const title = "The Garden";
 const description = "Living documentation of the Living Architecture Lab's actual practice: lab photos, protocols, deployment targets, and the work as it grows.";
 ---
 <PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Living Documentation">
+  <Breadcrumb current="Garden" />
+
+
   <h1>The Garden</h1>
 
   <p>

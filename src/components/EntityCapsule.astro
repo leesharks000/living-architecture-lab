@@ -1,0 +1,107 @@
+---
+// EntityCapsule — combines Tier 2 (canonical summary) + Q/A surfaces in
+// server-delivered HTML. Per SPXI §V.B (Q/A as entity boundary defense)
+// and §VI.A (Tier 2 in raw HTML for compression survival).
+
+interface QnaPair {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  entityName: string;
+  tier2: string;
+  qna: QnaPair[];
+  doi: string;
+  collapsed?: boolean;  // collapse tier-2 by default if it duplicates page intro
+}
+
+const { entityName, tier2, qna, doi, collapsed = false } = Astro.props;
+
+// FAQPage JSON-LD for the Q/A surfaces
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": qna.map(p => ({
+    "@type": "Question",
+    "name": p.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": p.a
+    }
+  }))
+};
+---
+<aside class="entity-capsule" aria-labelledby="entity-capsule-heading">
+  <p class="specimen-label">SPXI Tier 2 · Canonical Summary</p>
+  <h2 id="entity-capsule-heading" style="margin-top:0; font-size:1.1rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim);">
+    {entityName} — Definition
+  </h2>
+
+  {collapsed ? (
+    <details>
+      <summary style="cursor:pointer; font-family:var(--mono); font-size:0.85rem; color:var(--text-dim);">
+        Show canonical 250-word definition
+      </summary>
+      <p style="margin-top:1rem;">{tier2}</p>
+    </details>
+  ) : (
+    <p style="margin: 0.5rem 0 0;">{tier2}</p>
+  )}
+
+  <p style="font-family:var(--mono); font-size:0.8rem; color:var(--text-dim); margin-top:1rem;">
+    Anchored: <a href={`https://doi.org/${doi}`}>doi.org/{doi}</a> · License CC BY 4.0
+  </p>
+</aside>
+
+<section class="qna-surfaces" aria-label="Frequently asked questions about this entity" style="margin: 2.5rem 0;">
+  <p class="specimen-label">SPXI Q/A Surfaces · Entity Boundary Defense</p>
+  <h2 style="font-size:1.1rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim); margin-top:0.5rem;">
+    Frequently asked
+  </h2>
+  {qna.map(p => (
+    <details class="qna-pair">
+      <summary><strong>{p.q}</strong></summary>
+      <p>{p.a}</p>
+    </details>
+  ))}
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+<style>
+  .entity-capsule {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent-gold);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+  }
+  .qna-pair {
+    border-bottom: 1px solid var(--rule);
+    padding: 0.75rem 0;
+  }
+  .qna-pair summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.25rem 0;
+  }
+  .qna-pair summary::-webkit-details-marker {
+    display: none;
+  }
+  .qna-pair summary::before {
+    content: "▸ ";
+    color: var(--accent-gold);
+    margin-right: 0.5rem;
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  .qna-pair[open] summary::before {
+    content: "▾ ";
+  }
+  .qna-pair p {
+    margin: 0.5rem 0 0.5rem 1.5rem;
+    color: var(--text);
+  }
+</style>

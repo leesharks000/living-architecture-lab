@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import SimPullQuote from '../../components/SimPullQuote.astro';
 import lalPacket from '../../data/mpai-lal.json';
 
@@ -9,6 +10,9 @@ const description = "The Living Architecture Lab's garage laboratory in the Coac
 const lastUpdated = '2026-04-28';
 ---
 <PageLayout {title} {description} jsonLd={lalPacket} pageLabel="The Garden">
+  <Breadcrumb current="Coachella Valley" />
+
+
   <h1>Coachella Valley</h1>
   <p style="font-size:1.15rem; color:var(--text-dim); font-style:italic;">
     The lab's garage laboratory.

@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import DoiLink from '../../components/DoiLink.astro';
 import lalPacket from '../../data/mpai-lal.json';
 
@@ -7,6 +8,9 @@ const title = "Hexagonal Contributor License v3.0";
 const description = "All Living Architecture Lab intellectual property remains with Alice Thornburgh. The Hexagonal Contributor License v3.0 governs all CHA-affiliated contributions.";
 ---
 <PageLayout {title} {description} jsonLd={lalPacket} pageLabel="License">
+  <Breadcrumb current="Contributor License" />
+
+
   <h1>Hexagonal Contributor License v3.0</h1>
 
   <p>

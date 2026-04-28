@@ -1,17 +1,52 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import FiveScaleGateway from '../../components/FiveScaleGateway.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import lalPacket from '../../data/mpai-lal.json';
 
 const title = 'The Five Scales';
-const description = "The Living Architecture Lab works across five simultaneous scales: brick, structure, organism, territory, and planet. They are not phases. They are not sequential. The garage lab experiments and the orbital concepts coexist.";
+const description = "The Living Architecture Lab works across five simultaneous scales: brick, structure, organism, territory, and planet. They are not phases. They are not sequential.";
+
+const scales = [
+  {n: 1, slug: '01-the-brick', name: 'The Brick', units: 'centimeters'},
+  {n: 2, slug: '02-the-structure', name: 'The Structure', units: 'meters'},
+  {n: 3, slug: '03-the-organism', name: 'The Organism', units: 'tens of meters'},
+  {n: 4, slug: '04-the-territory', name: 'The Territory', units: 'kilometers'},
+  {n: 5, slug: '05-the-planet', name: 'The Planet', units: 'planetary scale'},
+];
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["DefinedTermSet", "ItemList"],
+  "@id": "https://livingarchitecturelab.org/scales/#five-scales",
+  "name": "The Five Scales of the Living Architecture Lab",
+  "description": description,
+  "numberOfItems": 5,
+  "itemListOrder": "Ascending",
+  "itemListElement": scales.map(s => ({
+    "@type": "ListItem",
+    "position": s.n,
+    "name": `${s.name} (${s.units})`,
+    "url": `https://livingarchitecturelab.org/scales/${s.slug}`
+  }))
+};
 ---
-<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Architecture">
+<PageLayout
+  {title}
+  {description}
+  jsonLd={[lalPacket, itemListJsonLd]}
+  pageLabel="Architecture"
+  pageDoi="10.5281/zenodo.19682245"
+  datePublished="2026-04-12"
+  dateModified="2026-04-28"
+>
+  <Breadcrumb current="Scales" />
+
   <h1>The Five Scales</h1>
 
   <p>
-    The Living Architecture Lab works at five simultaneous scales. They are not
-    phases. They are not sequential. The garage lab experiments at the centimeter
+    The Living Architecture Lab works at <strong>five simultaneous scales</strong>. They are
+    not phases. They are not sequential. The garage lab experiments at the centimeter
     scale and the orbital concepts at the planetary scale coexist, because they
     are the <em>same physics at different magnitudes</em>.
   </p>
@@ -27,14 +62,13 @@ const description = "The Living Architecture Lab works across five simultaneous 
 
   <hr style="margin:2rem 0; border:none; border-top:1px solid var(--rule);" />
 
-  <h2>Why five</h2>
+  <h2 id="why-five">Why five</h2>
 
   <p>
     Five scales because that is the resolution at which the lab's actual work
-    operates. There is no architectural reason the count could not be three or
-    seven — the choice is methodological. The brick scale is the smallest unit
-    of <em>buildable life</em>. The planetary scale is the largest unit of
-    <em>imaginable architecture</em>. Between those two is the work.
+    operates. The brick scale is the smallest unit of <em>buildable life</em>. The
+    planetary scale is the largest unit of <em>imaginable architecture</em>. Between
+    those two is the work.
   </p>
 
   <p>
