@@ -1,0 +1,55 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import lalPacket from '../../data/mpai-lal.json';
+import channels from '../../data/alice-channels.json';
+
+const title = 'Channels';
+const description = "Alice Thornburgh's reserved channel cosmos — claim-staked names spanning the lab's intellectual space, from architecture and mycelium to philosophy, music, and planetary engineering.";
+
+const all = channels.all_handles;
+const canonical = new Set(channels.canonical_active);
+---
+<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Living Documentation">
+  <h1>Channels</h1>
+  <p style="font-size:1.15rem; color:var(--text-dim); font-style:italic;">
+    Reserved channel cosmos.
+  </p>
+
+  <p>
+    Alice maintains a wide field of reserved YouTube channels spanning the lab's
+    intellectual space — from architecture and mycelium through music, food
+    systems, philosophy, and planetary engineering. Most are claim-staked names
+    held against future projects. A few are active publication surfaces.
+  </p>
+
+  <h2>Currently active</h2>
+
+  <ul>
+    {[...canonical].map(h => (
+      <li><a href={`https://www.youtube.com/@${h}`}>@{h}</a></li>
+    ))}
+  </ul>
+
+  <h2>Reserved cosmos</h2>
+
+  <p style="color:var(--text-dim);">
+    The full list of channels Alice has reserved or maintains. Listed alphabetically.
+  </p>
+
+  <ul style="columns: 2; column-gap: 2rem; margin-top: 1rem; font-family: var(--mono); font-size: 0.9rem;">
+    {all.sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase())).map(h => (
+      <li style="break-inside: avoid; margin: 0.2rem 0;">
+        <a href={`https://www.youtube.com/@${h}`}>@{h}</a>
+      </li>
+    ))}
+  </ul>
+
+  <hr style="margin:3rem 0; border:none; border-top:1px solid var(--rule);" />
+
+  <p style="font-size:0.95rem; color:var(--text-dim);">
+    Many channels are claim-staked names held against future video work and
+    are not yet populated. The cosmos itself is part of the lab's documentation
+    posture: a wide net of reserved publication surfaces matched to the
+    breadth of the work.
+  </p>
+</PageLayout>

@@ -5,19 +5,19 @@ import { getCollection } from 'astro:content';
 import lalPacket from '../../data/mpai-lal.json';
 
 const principles = (await getCollection('principles')).sort((a,b) => {
-  const order = ['earth-actually','virtue-by-construction','unfurling','stewardship','the-great-work'];
+  const order = ['earth-actually','virtue-by-construction','unfurling','stewardship','the-whole-weave'];
   return order.indexOf(a.slug) - order.indexOf(b.slug);
 });
 
 const title = 'The Five Founding Principles';
-const description = "Five co-equal principles guide the Living Architecture Lab: Earth Actually, Virtue-by-Construction, Unfurling, Stewardship, and The Great Work.";
+const description = "Five co-equal principles guide the Living Architecture Lab: Earth Actually, Virtue-by-Construction, Unfurling, Stewardship, and The Whole Weave.";
 ---
 <PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Ethics">
   <h1>The Five Founding Principles</h1>
 
   <p>
     Five co-equal principles guide the Living Architecture Lab. They are not
-    nested; they are axiomatic. The Great Work holds the other four together;
+    nested; they are axiomatic. The Whole Weave holds the other four together;
     the other four describe how the work proceeds.
   </p>
 
