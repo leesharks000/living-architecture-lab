@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background — bone -->
+  <rect width="64" height="64" fill="#f6f1e8"/>
+
+  <!-- Hexagonal brick — gold -->
+  <polygon points="32,8 54,20 54,44 32,56 10,44 10,20"
+           fill="#a89060" stroke="#2a2620" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Mycelial tendrils — fine white lines radiating from center -->
+  <g stroke="#fefbf4" stroke-width="0.7" fill="none" opacity="0.85">
+    <path d="M32,32 L24,18 M22,18 L20,14 M26,16 L28,12"/>
+    <path d="M32,32 L46,20 M48,18 L52,16 M44,16 L46,12"/>
+    <path d="M32,32 L48,38 M50,38 L54,40 M48,42 L52,44"/>
+    <path d="M32,32 L40,48 M42,50 L44,54 M38,50 L40,54"/>
+    <path d="M32,32 L24,48 M22,50 L20,54 M26,50 L26,54"/>
+    <path d="M32,32 L16,38 M14,38 L10,40 M16,42 L12,44"/>
+  </g>
+
+  <!-- Central node -->
+  <circle cx="32" cy="32" r="2" fill="#fefbf4"/>
+</svg>

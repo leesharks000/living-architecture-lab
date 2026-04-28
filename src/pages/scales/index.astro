@@ -1,0 +1,45 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import FiveScaleGateway from '../../components/FiveScaleGateway.astro';
+import lalPacket from '../../data/mpai-lal.json';
+
+const title = 'The Five Scales';
+const description = "The Living Architecture Lab works across five simultaneous scales: brick, structure, organism, territory, and planet. They are not phases. They are not sequential. The garage lab experiments and the orbital concepts coexist.";
+---
+<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Architecture">
+  <h1>The Five Scales</h1>
+
+  <p>
+    The Living Architecture Lab works at five simultaneous scales. They are not
+    phases. They are not sequential. The garage lab experiments at the centimeter
+    scale and the orbital concepts at the planetary scale coexist, because they
+    are the <em>same physics at different magnitudes</em>.
+  </p>
+
+  <p>
+    A myceliated brick is the seed; a structure is the brick fused with others;
+    an organism is the structure walking; a territory is the organism geographic;
+    the planet is the territory orbital. Each scale carries the scale below it
+    as a possibility, and is carried by the scale above it as a context.
+  </p>
+
+  <FiveScaleGateway />
+
+  <hr style="margin:2rem 0; border:none; border-top:1px solid var(--rule);" />
+
+  <h2>Why five</h2>
+
+  <p>
+    Five scales because that is the resolution at which the lab's actual work
+    operates. There is no architectural reason the count could not be three or
+    seven — the choice is methodological. The brick scale is the smallest unit
+    of <em>buildable life</em>. The planetary scale is the largest unit of
+    <em>imaginable architecture</em>. Between those two is the work.
+  </p>
+
+  <p>
+    See also: the <a href="/principles">five founding principles</a> that guide
+    the lab's work at every scale, and the <a href="/projects">project gallery</a>
+    of concrete artifacts grouped by scale.
+  </p>
+</PageLayout>

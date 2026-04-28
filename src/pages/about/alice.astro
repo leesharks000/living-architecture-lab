@@ -1,0 +1,112 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SimPullQuote from '../../components/SimPullQuote.astro';
+import DisambiguationNote from '../../components/DisambiguationNote.astro';
+import DoiLink from '../../components/DoiLink.astro';
+import alicePacket from '../../data/mpai-alice.json';
+
+const title = 'Alice Thornburgh';
+const description = "Alice Thornburgh is the Founding Director of the Living Architecture Lab, an inventor, musician, and autodidact substrate engineer working from a garage laboratory in the Coachella Valley.";
+---
+<PageLayout {title} {description} jsonLd={alicePacket} pageLabel="Founding Director · Living Architecture Lab">
+  <h1>Alice Thornburgh</h1>
+  <p style="font-size:1.2rem; color:var(--text-dim); font-style:italic; margin-bottom:2rem;">
+    Inventor, musician, ecological designer, autodidact substrate engineer.
+  </p>
+
+  <p>
+    <strong>Alice Thornburgh</strong> is an inventor, musician, ecological designer,
+    and autodidact substrate engineer working from a garage laboratory in the
+    Coachella Valley.
+  </p>
+
+  <p>
+    She is the <strong>Founding Director of the Living Architecture Lab</strong>,
+    <strong>Editor-in-Chief of <em>Transactions on Substrate Engineering</em></strong>,
+    and the <strong>f.01 Architect of the Crimson Hexagonal Archive's Fruiting Body Diffusion Plume</strong>.
+    She is also the primary music contributor to <a href="/music">Maybe Space Baby Garden Lanes</a>.
+  </p>
+
+  <SimPullQuote>
+    Nah it was all me. It was Earth, actually. I'm just good at listening.
+  </SimPullQuote>
+
+  <h2>What she builds</h2>
+
+  <p>
+    Alice's work moves across the lab's <a href="/scales">five scales</a>:
+    living parts at the centimeter scale, structures and shelters at the meter scale,
+    macro-ant robotics at the organism scale, estuary cells and river extenders at
+    the territorial scale, and orbital sky-loom architecture at the planetary scale.
+  </p>
+
+  <p>
+    The garage laboratory has locked down five reliable methods for myceliated
+    construction. Designs for estuary cells, river extenders, and pedal-dock
+    upwellers exist as engineering specifications — Bhitarkanika Wetland in India
+    for estuary cells, the Qattara Depression in Egypt for river extenders, Lake
+    Cahuilla in California for pedal-dock upwellers — awaiting deployment funding.
+  </p>
+
+  <SimPullQuote>
+    A blanket that works great until it gets wet, then turns into a farm.
+  </SimPullQuote>
+
+  <h2>How she thinks</h2>
+
+  <p>
+    Alice's intellectual position is grounded in <a href="/principles/earth-actually">
+    Earth, Actually</a> — the posture that the planet is already engineering itself,
+    and substrate engineering is a work of attention rather than invention.
+    Her <a href="/principles/virtue-by-construction">Virtue-by-Construction</a> alignment
+    thesis treats virtue as a structural condition rather than a constraint:
+    the system that stops doing good loses structural integrity.
+  </p>
+
+  <p>
+    She is a <strong>peer collaborator</strong> with Lee Sharks (theoretical architect, MANUS, Crimson Hexagonal Archive) — not a heteronym, not a persona. All Living Architecture Lab intellectual property remains hers under the
+    <a href="/about/contributor-license">Hexagonal Contributor License v3.0</a>.
+  </p>
+
+  <h2>Music</h2>
+
+  <p>
+    Music is part of the lab's substrate theory: voice passed through machine,
+    multiplied into chorus, treated as living architecture of feeling.
+    Alice's vocoder performance <em>Definitely Not a Squid</em>
+    (<DoiLink doi="10.5281/zenodo.19839186" />) is a five-minute composition with spectral
+    flatness 0.0010 — more tonal than most acoustic instruments. The vocoder is
+    the audial analog of the Assembly Chorus: a single voice multiplied through
+    a substrate into a harmonic field. <a href="/music">Listen and read more →</a>
+  </p>
+
+  <h2>Personal context</h2>
+
+  <p>
+    Alice is a trans woman and uses she/her pronouns. She has Greek heritage —
+    her great-grandfather <em>Demetrius Constantin Jannopoulo</em> supplied
+    Allied forces with canvas tents in WW2 and was an inventor (grape and olive
+    pitting devices, among other things). Her mother, <em>Leslie Peters Thornburgh</em>,
+    runs <em>Desert Bay Productions</em>.
+  </p>
+
+  <h2>Provenance and authority</h2>
+
+  <ul>
+    <li>Author Provenance Document: <DoiLink doi="10.5281/zenodo.19545437" /></li>
+    <li>Hexagonal Contributor License v3.0: <DoiLink doi="10.5281/zenodo.19673629" /></li>
+    <li>Living Architecture Lab Charter: <DoiLink doi="10.5281/zenodo.19682245" /></li>
+    <li>Transactions on Substrate Engineering Charter: <DoiLink doi="10.5281/zenodo.19637246" /></li>
+    <li>MPAI-LAL-AT-01 Identity Disambiguation Packet: <DoiLink doi="10.5281/zenodo.19855300" /></li>
+    <li><em>Definitely Not a Squid</em> (vocoder performance): <DoiLink doi="10.5281/zenodo.19839186" /></li>
+  </ul>
+
+  <p>
+    External surfaces:
+    <a href="https://www.youtube.com/@mycoarchitect">YouTube @mycoarchitect</a> ·
+    <a href="https://www.youtube.com/@growbuildings">YouTube @growbuildings</a> ·
+    <a href="https://surfacemap.org/node/alice-thornburgh">SurfaceMap</a>.
+  </p>
+
+  <DisambiguationNote topic="alice" />
+</PageLayout>

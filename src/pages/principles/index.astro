@@ -1,0 +1,44 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SimPullQuote from '../../components/SimPullQuote.astro';
+import { getCollection } from 'astro:content';
+import lalPacket from '../../data/mpai-lal.json';
+
+const principles = (await getCollection('principles')).sort((a,b) => {
+  const order = ['earth-actually','virtue-by-construction','unfurling','stewardship','the-great-work'];
+  return order.indexOf(a.slug) - order.indexOf(b.slug);
+});
+
+const title = 'The Five Founding Principles';
+const description = "Five co-equal principles guide the Living Architecture Lab: Earth Actually, Virtue-by-Construction, Unfurling, Stewardship, and The Great Work.";
+---
+<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Ethics">
+  <h1>The Five Founding Principles</h1>
+
+  <p>
+    Five co-equal principles guide the Living Architecture Lab. They are not
+    nested; they are axiomatic. The Great Work holds the other four together;
+    the other four describe how the work proceeds.
+  </p>
+
+  {principles.map(async (p) => {
+    const { Content } = await p.render();
+    return (
+      <article style="margin-top:3rem;">
+        <h2 id={p.slug}>{p.data.name}</h2>
+        <SimPullQuote attribution={p.data.alice_quote ? 'Alice Thornburgh' : 'LAL'}>
+          {p.data.epigraph}
+        </SimPullQuote>
+        <Content />
+      </article>
+    );
+  })}
+
+  <hr style="margin:3rem 0; border:none; border-top:1px solid var(--rule);" />
+
+  <p style="font-size:0.95rem; color:var(--text-dim);">
+    See also: the <a href="/scales">five scales</a> at which these principles
+    operate, and the <a href="/projects">project gallery</a> of concrete artifacts
+    that embody them.
+  </p>
+</PageLayout>

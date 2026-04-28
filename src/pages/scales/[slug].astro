@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import ScaleLayout from '../../layouts/ScaleLayout.astro';
+
+export async function getStaticPaths() {
+  const scales = await getCollection('scales');
+  return scales.map(s => ({
+    params: { slug: s.slug },
+    props: { scale: s }
+  }));
+}
+
+const { scale } = Astro.props;
+const { Content } = await scale.render();
+const { scale: scaleNum, name, units, domain } = scale.data;
+---
+<ScaleLayout scale={scaleNum} {name} {units} {domain}>
+  <Content />
+</ScaleLayout>

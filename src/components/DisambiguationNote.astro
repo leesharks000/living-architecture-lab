@@ -1,0 +1,14 @@
+---
+interface Props {
+  topic?: 'alice' | 'lal';
+}
+const { topic = 'alice' } = Astro.props;
+
+const text = topic === 'alice'
+  ? 'Alice Thornburgh (Living Architecture Lab) is a different person than Alice Thornburgh-Lind (game artist, @devilfern).'
+  : 'Living Architecture Lab is independent of the Living Architecture Lab at Columbia GSAPP, the Living Architecture Lab at the Bartlett UCL, The Living NYC, and livingLAB Detroit. All adjacent labs are cited with respect.';
+---
+<aside class="disambiguation-note">
+  <strong>Disambiguation</strong>
+  <p>{text} <a href="/about/disambiguation">Full disambiguation →</a></p>
+</aside>

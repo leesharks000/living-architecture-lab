@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://livingarchitecturelab.org/sitemap.xml

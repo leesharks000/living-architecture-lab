@@ -1,0 +1,13 @@
+---
+interface Props {
+  doi: string;
+  title?: string;
+}
+const { doi, title } = Astro.props;
+const url = doi.startsWith('http') ? doi : `https://doi.org/${doi}`;
+const display = doi.replace(/^https?:\/\/doi\.org\//, '');
+---
+<a href={url} class="doi" rel="cite" title={title}>
+  {display}
+  {title && <span style="font-style:italic;"> · {title}</span>}
+</a>

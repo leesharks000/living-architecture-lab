@@ -1,0 +1,406 @@
+/* Living Architecture Lab — global styles
+ * Field-guide aesthetic. Bone & sand & clay tones.
+ * Per workplan EA-LAL-WORKPLAN-01 §6.
+ */
+
+:root {
+  /* Base palette — field-guide aesthetic */
+  --bg: #f6f1e8;            /* bone / sand */
+  --bg-deep: #ece4d4;       /* aged paper */
+  --bg-card: #fefbf4;       /* specimen card */
+  --text: #2a2620;          /* burnt umber */
+  --text-dim: #6b6253;      /* substrate */
+  --rule: #c9bfa9;          /* faint divider */
+  --accent-gold: #a89060;   /* unfurling */
+  --accent-bright: #c8a868; /* the brick */
+
+  /* Scale color coding */
+  --scale-1: #a89060;       /* brick — gold */
+  --scale-2: #6b8f5e;       /* structure — green */
+  --scale-3: #b84030;       /* organism — wine cap red */
+  --scale-4: #6088b0;       /* territory — water blue */
+  --scale-5: #2a2620;       /* planet — void */
+
+  /* Typography */
+  --serif: 'Cormorant Garamond', 'Charter', 'Iowan Old Style', Georgia, serif;
+  --mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --measure: 32em;
+  --line-height: 1.7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0e12;
+    --bg-deep: #12141a;
+    --bg-card: #16181f;
+    --text: #d8d4cc;
+    --text-dim: #8a8478;
+    --rule: #2c2e36;
+    --accent-gold: #c8a868;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-family: var(--serif);
+  background: var(--bg);
+  color: var(--text);
+  line-height: var(--line-height);
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  width: 100%;
+}
+
+/* --- Typography --- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  margin: 2.5rem 0 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.25rem;
+}
+
+h3 { font-size: 1.4rem; }
+
+p { margin: 1rem 0; }
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-gold);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+code, pre, .mono, .doi {
+  font-family: var(--mono);
+  font-size: 0.92em;
+}
+
+.doi {
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+}
+
+/* --- Pull quotes / SIMs (Semantic Integrity Markers) --- */
+
+blockquote, .sim {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 3px solid var(--accent-gold);
+  background: var(--bg-card);
+  color: var(--text);
+}
+
+blockquote cite, .sim-attribution {
+  display: block;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* --- Header / nav --- */
+
+header.site-header {
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+  padding: 1rem 0;
+}
+
+.site-header-inner {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.site-title strong {
+  font-weight: 500;
+}
+
+nav.primary ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+nav.primary a {
+  text-decoration: none;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+nav.primary a:hover, nav.primary a.active {
+  color: var(--text);
+}
+
+/* --- Five-scale gateway --- */
+
+.scale-gateway {
+  display: grid;
+  gap: 0.75rem;
+  margin: 2rem 0 3rem;
+}
+
+.scale-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--scale-color, var(--accent-gold));
+  padding: 1rem 1.25rem;
+  transition: transform 0.15s, border-color 0.2s;
+}
+
+.scale-card:hover {
+  transform: translateX(4px);
+  border-color: var(--scale-color, var(--accent-gold));
+}
+
+.scale-card .scale-label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  margin-bottom: 0.25rem;
+}
+
+.scale-card .scale-name {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  margin: 0 0 0.4rem;
+}
+
+.scale-card .scale-summary {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.scale-card[data-scale="1"] { --scale-color: var(--scale-1); }
+.scale-card[data-scale="2"] { --scale-color: var(--scale-2); }
+.scale-card[data-scale="3"] { --scale-color: var(--scale-3); }
+.scale-card[data-scale="4"] { --scale-color: var(--scale-4); }
+.scale-card[data-scale="5"] { --scale-color: var(--scale-5); }
+
+/* --- CTA buttons --- */
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 0;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--accent-gold);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.cta:hover {
+  background: var(--accent-gold);
+  color: var(--bg);
+}
+
+.cta.primary {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.cta.primary:hover {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--bg);
+}
+
+/* --- Specimen / field-guide cards --- */
+
+.specimen {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.specimen-label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.specimen h3 {
+  margin-top: 0;
+}
+
+/* --- Disambiguation callout --- */
+
+.disambiguation-note {
+  background: var(--bg-deep);
+  border: 1px dashed var(--accent-gold);
+  padding: 1rem 1.25rem;
+  margin: 2rem 0;
+  font-size: 0.92rem;
+}
+
+.disambiguation-note strong {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* --- Tables (specimen labels for DOIs) --- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+th {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+/* --- Footer kernel --- */
+
+footer.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 2rem 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+footer.site-footer .closure {
+  color: var(--accent-gold);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+footer.site-footer a {
+  color: var(--text-dim);
+  text-decoration-color: var(--rule);
+}
+
+/* --- Lists --- */
+
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+/* --- Small screens --- */
+
+@media (max-width: 640px) {
+  html { font-size: 17px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  main { padding: 1rem 1rem 3rem; }
+  .site-header-inner { flex-direction: column; align-items: flex-start; }
+  nav.primary ul { flex-wrap: wrap; gap: 0.75rem 1rem; font-size: 0.8rem; }
+  blockquote, .sim { font-size: 1.05rem; padding: 0.75rem 1rem; }
+}
+
+/* --- Print (a lab notebook prints) --- */
+
+@media print {
+  header.site-header, footer.site-footer { display: none; }
+  body { color: #000; background: #fff; }
+  a { color: #000; text-decoration: none; }
+}

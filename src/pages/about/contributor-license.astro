@@ -1,0 +1,42 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import DoiLink from '../../components/DoiLink.astro';
+import lalPacket from '../../data/mpai-lal.json';
+
+const title = "Hexagonal Contributor License v3.0";
+const description = "All Living Architecture Lab intellectual property remains with Alice Thornburgh. The Hexagonal Contributor License v3.0 governs all CHA-affiliated contributions.";
+---
+<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="License">
+  <h1>Hexagonal Contributor License v3.0</h1>
+
+  <p>
+    All Living Architecture Lab intellectual property remains with Alice Thornburgh
+    unless she explicitly co-authors or co-licenses specific works. The default
+    license for LAL deposits is determined by the Founding Director, not by the
+    Crimson Hexagonal Archive.
+  </p>
+
+  <p>
+    The Hexagonal Contributor License v3.0 (HCL v3.0) governs all CHA-affiliated
+    contributions and establishes:
+  </p>
+
+  <ul>
+    <li>IP retention by the contributor</li>
+    <li>Exit rights without consequence</li>
+    <li>Default open access for archived deposits (CC BY 4.0 unless specified)</li>
+    <li>Heteronym separation rules where applicable</li>
+    <li>The peer-collaborator-not-witness distinction for non-MANUS contributors</li>
+  </ul>
+
+  <h2>Canonical deposit</h2>
+
+  <p>
+    The full HCL v3.0 license text is deposited at:
+    <DoiLink doi="10.5281/zenodo.19673629" title="Hexagonal Contributor License v3.0 — Alice Thornburgh" />
+  </p>
+
+  <p>
+    A summary version for new contributors will be added in Phase 2.
+  </p>
+</PageLayout>

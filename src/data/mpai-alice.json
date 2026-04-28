@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "mp": "https://metadatapacket.org/vocabulary#"
+  },
+  "@type": ["Person", "mp:IndexedEntity"],
+  "@id": "https://doi.org/10.5281/zenodo.19545437",
+  "name": "Alice Thornburgh",
+  "alternateName": [
+    "Alice Thornburgh, LAL",
+    "Thornburgh, Alice",
+    "A. Thornburgh (LAL)"
+  ],
+  "description": "Founding Director of the Living Architecture Lab; substrate engineer working at the intersection of biology, architecture, and planetary-scale ecological design; f.01 Architect of the Fruiting Body Diffusion Plume in the Crimson Hexagonal Archive; Editor-in-Chief of Transactions on Substrate Engineering.",
+  "gender": "Female",
+  "pronouns": "she/her",
+  "jobTitle": "Founding Director, Living Architecture Lab",
+  "knowsAbout": [
+    "Substrate Engineering",
+    "Myceliated Construction",
+    "Macro-ant Robotics",
+    "Living Architecture (biological)",
+    "Plane-Forming Systems",
+    "Estuary Cells",
+    "Virtue-by-Construction Alignment",
+    "Vocoder-based Music Composition",
+    "Planetary-Scale Ecological Design"
+  ],
+  "url": [
+    "https://livingarchitecturelab.org",
+    "https://surfacemap.org/node/alice-thornburgh"
+  ],
+  "sameAs": [
+    "https://doi.org/10.5281/zenodo.19673629",
+    "https://doi.org/10.5281/zenodo.19545437",
+    "https://doi.org/10.5281/zenodo.19637246",
+    "https://doi.org/10.5281/zenodo.19682245",
+    "https://doi.org/10.5281/zenodo.19839186",
+    "https://doi.org/10.5281/zenodo.19855300",
+    "https://www.youtube.com/@mycoarchitect",
+    "https://www.youtube.com/@growbuildings"
+  ],
+  "differentFrom": "https://devilfern.artstation.com",
+  "mp:ontologicalStatus": "living_person",
+  "mp:negativeTag": [
+    "NOT Alice Thornburgh-Lind",
+    "NOT the UI artist for Traveler's Refrain",
+    "NOT the voice of Asphodel",
+    "NOT @devilfern or @devilfern.draws",
+    "NOT a Los Angeles-based game designer",
+    "NOT affiliated with Red Essence Games",
+    "NOT a heteronym of Lee Sharks"
+  ],
+  "mp:semanticIntegrityMarker": [
+    "Founding Director of the Living Architecture Lab",
+    "f.01 Architect of the Fruiting Body Diffusion Plume",
+    "Substrate engineering uses biology to build things",
+    "Editor-in-Chief, Transactions on Substrate Engineering",
+    "Coachella Valley garage laboratory",
+    "Earth, actually."
+  ],
+  "mp:verificationLevel": "assembly_attested"
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://livingarchitecturelab.org/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://livingarchitecturelab.org/about/alice</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://livingarchitecturelab.org/about/disambiguation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://livingarchitecturelab.org/about/contributor-license</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://livingarchitecturelab.org/scales</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://livingarchitecturelab.org/scales/01-the-brick</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://livingarchitecturelab.org/scales/02-the-structure</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://livingarchitecturelab.org/scales/03-the-organism</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://livingarchitecturelab.org/scales/04-the-territory</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://livingarchitecturelab.org/scales/05-the-planet</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://livingarchitecturelab.org/principles</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://livingarchitecturelab.org/projects</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://livingarchitecturelab.org/journal</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://livingarchitecturelab.org/music</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://livingarchitecturelab.org/garden</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://livingarchitecturelab.org/garden/coachella-valley</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+</urlset>

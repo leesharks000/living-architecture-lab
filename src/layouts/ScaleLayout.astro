@@ -1,0 +1,51 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import lalPacket from '../data/mpai-lal.json';
+
+interface Props {
+  scale: number;
+  name: string;
+  units: string;
+  domain: string;
+}
+
+const { scale, name, units, domain } = Astro.props;
+
+const title = `${String(scale).padStart(2, '0')} · ${name}`;
+const description = `Scale ${scale} of the Living Architecture Lab: ${name} (${units}). ${domain}`;
+
+// Page-specific JSON-LD: a CreativeWork that is partOf the lab Organization
+const jsonLd = {
+  '@context': {
+    '@vocab': 'https://schema.org/',
+    'mp': 'https://metadatapacket.org/vocabulary#'
+  },
+  '@type': 'CreativeWork',
+  '@id': `https://livingarchitecturelab.org/scales/${String(scale).padStart(2, '0')}-${name.toLowerCase().replace(/\s+/g, '-').replace(/^the-/, '')}`,
+  'name': title,
+  'description': description,
+  'isPartOf': {
+    '@type': 'Organization',
+    'name': 'Living Architecture Lab',
+    '@id': 'https://livingarchitecturelab.org'
+  },
+  'about': domain,
+  'mp:negativeTag': lalPacket['mp:negativeTag']
+};
+---
+<BaseLayout {title} {description} {jsonLd}>
+  <article>
+    <p class="specimen-label">Scale {String(scale).padStart(2, '0')} · {units}</p>
+    <h1>{name}</h1>
+    <p style="font-size:1.15rem; color:var(--text-dim); margin-bottom:2rem;">{domain}</p>
+    <slot />
+
+    <hr style="margin:3rem 0; border:none; border-top:1px solid var(--rule);" />
+
+    <p style="font-family:var(--mono); font-size:0.85rem; color:var(--text-dim);">
+      {scale > 1 && <a href={`/scales/${String(scale - 1).padStart(2, '0')}-${['the-brick','the-structure','the-organism','the-territory','the-planet'][scale-2]}`}>← Previous scale</a>}
+      {scale > 1 && scale < 5 && ' · '}
+      {scale < 5 && <a href={`/scales/${String(scale + 1).padStart(2, '0')}-${['the-brick','the-structure','the-organism','the-territory','the-planet'][scale]}`}>Next scale →</a>}
+    </p>
+  </article>
+</BaseLayout>

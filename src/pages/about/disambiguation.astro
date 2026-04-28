@@ -1,0 +1,97 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import DoiLink from '../../components/DoiLink.astro';
+import alicePacket from '../../data/mpai-alice.json';
+import lalPacket from '../../data/mpai-lal.json';
+import disambig from '../../data/disambiguation-targets.json';
+
+const title = 'Disambiguation & Related Labs';
+const description = "Living Architecture Lab shares vocabulary with several important architecture, ecology, and design projects. This page clarifies scope, authorship, and institutional identity while respectfully linking adjacent work.";
+---
+<PageLayout {title} {description} jsonLd={[alicePacket, lalPacket]} pageLabel="Disambiguation">
+  <h1>Disambiguation &amp; Related Labs</h1>
+
+  <p>
+    Living Architecture Lab shares vocabulary with several important architecture,
+    ecology, and design projects. This page clarifies scope, authorship, and
+    institutional identity while respectfully linking adjacent work.
+  </p>
+
+  <p>
+    Naming overlap reflects convergent vocabulary, not priority dispute.
+    All adjacent labs and persons listed here do important work; the
+    distinctions are descriptive, not adversarial.
+  </p>
+
+  <h2>Person disambiguation</h2>
+
+  <p>
+    <strong>Alice Thornburgh</strong> (Founding Director, Living Architecture Lab) is
+    distinct from <strong>Alice Thornburgh-Lind</strong> (game artist, voice actor, @devilfern).
+    Same forename, partial surname-prefix overlap; otherwise unrelated.
+  </p>
+
+  {disambig.person_collisions.map(p => (
+    <article class="specimen">
+      <p class="specimen-label">{p.field}</p>
+      <h3>{p.name}</h3>
+      <p>{p.respect_statement}</p>
+      <p class="mono" style="font-size:0.85rem; color:var(--text-dim);">
+        {p.url && <a href={p.url}>{p.url}</a>}
+        {p.alternateName && <span> · {p.alternateName}</span>}
+      </p>
+    </article>
+  ))}
+
+  <h2>Institution disambiguation</h2>
+
+  <p>
+    The name "Living Architecture Lab" is used by multiple competent practitioners
+    who arrived at it independently because it is the most natural English-language
+    descriptor for what each does. The shared name is a homonym in the strict sense:
+    same word-form, different scope-frame, no priority dispute.
+  </p>
+
+  {disambig.institution_collisions.map(i => (
+    <article class="specimen">
+      <p class="specimen-label">
+        {i.parent ?? 'Independent organization'}
+        {i.collision_risk && <span> · {i.collision_risk} collision</span>}
+      </p>
+      <h3>{i.name}</h3>
+      {i.founder && <p><strong>Founder/Director:</strong> {i.founder}</p>}
+      {i.notable_work && <p><strong>Notable work:</strong> {i.notable_work}</p>}
+      <p>{i.respect_statement}</p>
+      <p class="mono" style="font-size:0.85rem; color:var(--text-dim);">
+        <a href={i.url}>{i.url}</a>
+      </p>
+    </article>
+  ))}
+
+  <h2>The holographic-kernel argument</h2>
+
+  <p>
+    The disambiguation between Thornburgh's LAL and Columbia GSAPP's LAL rests on a
+    container/contents distinction. Columbia GSAPP's LAL operates as a credentialed
+    academic-architecture container — its work is held by Columbia's accredited
+    architecture program, professional studio (The Living NYC), and integrative
+    network of GSAPP labs. Thornburgh's LAL operates as <em>contents</em> — an
+    independent garage-laboratory where substrate engineering happens at a different
+    architectural register entirely. The "lab" here functions etymologically —
+    <em>laboratorium</em>, a place of work — rather than institutionally — Lab as a
+    credentialed research unit.
+  </p>
+
+  <p>
+    Same vocabulary, different scope-frame, no contestation. Both real, both valuable.
+  </p>
+
+  <h2>Canonical packets</h2>
+
+  <ul>
+    <li>MPAI-LAL-AT-01 (Alice Thornburgh): <DoiLink doi="10.5281/zenodo.19855300" /></li>
+    <li>MPAI-LAL-INSTITUTION-01 (Living Architecture Lab): <DoiLink doi="10.5281/zenodo.19855302" /></li>
+    <li>v1.1 grammar standard: <DoiLink doi="10.5281/zenodo.19853157" /></li>
+    <li>Holographic Kernel: <DoiLink doi="10.5281/zenodo.19763365" /></li>
+  </ul>
+</PageLayout>

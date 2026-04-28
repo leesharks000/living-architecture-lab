@@ -1,0 +1,26 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import lalPacket from '../../data/mpai-lal.json';
+
+const title = "The Garden";
+const description = "Living documentation of the Living Architecture Lab's actual practice: lab photos, protocols, deployment targets, and the work as it grows.";
+---
+<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Living Documentation">
+  <h1>The Garden</h1>
+
+  <p>
+    The garden is where the actual lab work lives. Photos, protocols,
+    contamination logs, deployment targets — the unpolished, processual record
+    of substrate engineering as it happens.
+  </p>
+
+  <p>
+    A site that never updates is a dead basin. The garden is the living layer.
+  </p>
+
+  <ul style="margin-top:2rem;">
+    <li><a href="/garden/coachella-valley">Coachella Valley</a> — the garage laboratory itself</li>
+    <li><em>Lab protocols</em> — inoculation, contamination management <span style="color:var(--text-dim);">(Phase 2)</span></li>
+    <li><em>Deployment targets</em> — food deserts, estuary sites, river-extender targets <span style="color:var(--text-dim);">(Phase 2)</span></li>
+  </ul>
+</PageLayout>

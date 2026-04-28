@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FiveScaleGateway from '../components/FiveScaleGateway.astro';
+import lalPacket from '../data/mpai-lal.json';
+
+const title = 'Living Architecture Lab';
+const description = "Living Architecture Lab develops living materials, ecological structures, and planetary-scale architectural concepts rooted in mycelium, stewardship, and substrate engineering. Founded by Alice Thornburgh, 2026.";
+---
+<BaseLayout {title} {description} jsonLd={lalPacket}>
+  <section style="text-align:center; padding: 1rem 0 2rem;">
+    <h1 style="font-size:3rem; margin-bottom:0.5rem; letter-spacing:-0.02em;">
+      Living Architecture Lab
+    </h1>
+    <p style="font-size:1.4rem; font-style:italic; color:var(--text-dim); margin-top:0.25rem; margin-bottom:2rem;">
+      Organisms that build things.
+    </p>
+    <p style="font-size:1.1rem; max-width:30em; margin: 0 auto;">
+      Living Architecture Lab develops living materials, ecological structures,
+      and planetary-scale architectural concepts rooted in mycelium, stewardship,
+      and substrate engineering.
+    </p>
+    <p style="font-size:1.05rem; max-width:30em; margin: 1rem auto 0; color:var(--text-dim);">
+      The lab works across five scales:
+      <strong style="color:var(--text);">brick · structure · organism · territory · planet</strong>.
+      At each scale, compressed forms unfurl into shelter, food, repair, and living architecture.
+    </p>
+
+    <div class="cta-row" style="justify-content:center; margin-top:2.5rem;">
+      <a href="/scales" class="cta primary">Explore the Five Scales</a>
+      <a href="/about/alice" class="cta">Meet Alice Thornburgh</a>
+      <a href="/principles" class="cta">Read the Principles</a>
+    </div>
+  </section>
+
+  <hr style="margin:3rem 0; border:none; border-top:1px solid var(--rule);" />
+
+  <section>
+    <p class="specimen-label" style="text-align:center;">The Five Scales</p>
+    <FiveScaleGateway />
+  </section>
+
+  <hr style="margin:3rem 0; border:none; border-top:1px solid var(--rule);" />
+
+  <section style="text-align:center;">
+    <p class="specimen-label">Affiliated</p>
+    <p>
+      The lab anchors three institutions:
+      <a href="/journal"><em>Transactions on Substrate Engineering</em></a> (the journal),
+      <a href="/music">Maybe Space Baby Garden Lanes</a> (the music venue), and the
+      <a href="https://zenodo.org/communities/crimsonhexagonal">Crimson Hexagonal Archive</a> (the archive).
+    </p>
+    <p>
+      The garage laboratory is in the Coachella Valley.
+      <a href="/garden/coachella-valley">Visit the garden →</a>
+    </p>
+  </section>
+</BaseLayout>

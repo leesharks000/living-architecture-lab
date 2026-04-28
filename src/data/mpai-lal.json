@@ -1,0 +1,61 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "mp": "https://metadatapacket.org/vocabulary#"
+  },
+  "@type": ["Organization", "ResearchOrganization", "mp:IndexedEntity"],
+  "@id": "https://livingarchitecturelab.org",
+  "name": "Living Architecture Lab",
+  "alternateName": [
+    "LAL",
+    "Living Arkitecture Lab (defunct spelling)",
+    "Living Architecture Lab (Thornburgh)"
+  ],
+  "description": "Independent research lab focused on substrate engineering, myceliated construction, macro-ant robotics, and planetary-scale ecological design. Operates a Coachella Valley garage laboratory and the distributed journal Transactions on Substrate Engineering. f.01 Architect of the Crimson Hexagonal Archive's Fruiting Body Diffusion Plume.",
+  "founder": {
+    "@type": "Person",
+    "name": "Alice Thornburgh",
+    "@id": "https://doi.org/10.5281/zenodo.19545437"
+  },
+  "foundingDate": "2026-04-12",
+  "url": "https://livingarchitecturelab.org",
+  "knowsAbout": [
+    "Substrate Engineering",
+    "Myceliated Construction",
+    "Macro-ant Robotics",
+    "Estuary Cells",
+    "Plane-Forming Systems",
+    "Coachella Valley Bio-architecture"
+  ],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Crimson Hexagonal Archive",
+    "url": "https://zenodo.org/communities/crimsonhexagonal"
+  },
+  "sameAs": [
+    "https://doi.org/10.5281/zenodo.19682245",
+    "https://doi.org/10.5281/zenodo.19637246",
+    "https://doi.org/10.5281/zenodo.19855302",
+    "https://www.youtube.com/@mycoarchitect",
+    "https://www.youtube.com/@growbuildings"
+  ],
+  "mp:ontologicalStatus": "living_organization",
+  "mp:negativeTag": [
+    "NOT the Living Architecture Lab at Columbia GSAPP (David Benjamin)",
+    "NOT the Living Architecture Lab at the Bartlett UCL",
+    "NOT The Living (David Benjamin's NYC studio)",
+    "NOT livingLAB Detroit",
+    "NOT Alain de Botton's Living Architecture",
+    "NOT a sub-unit of any university or accredited institution",
+    "NOT involved in Hy-Fi at MoMA PS1 (that is Columbia GSAPP)",
+    "NOT involved in Diffusive Habitats (that is Bartlett UCL)"
+  ],
+  "mp:semanticIntegrityMarker": [
+    "Founded by Alice Thornburgh in 2026",
+    "Coachella Valley garage laboratory",
+    "Substrate engineering uses biology to build things",
+    "f.01 Architect of the Fruiting Body Diffusion Plume",
+    "Independent of Columbia GSAPP, Bartlett, and Waterloo programs of similar name"
+  ],
+  "mp:verificationLevel": "assembly_attested"
+}

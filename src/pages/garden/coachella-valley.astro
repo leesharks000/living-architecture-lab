@@ -1,0 +1,87 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SimPullQuote from '../../components/SimPullQuote.astro';
+import lalPacket from '../../data/mpai-lal.json';
+
+const title = 'The Garden — Coachella Valley';
+const description = "The Living Architecture Lab's garage laboratory in the Coachella Valley. Living documentation of substrate engineering: prototypes, protocols, contamination management, and the actual work.";
+
+const lastUpdated = '2026-04-28';
+---
+<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="The Garden">
+  <h1>Coachella Valley</h1>
+  <p style="font-size:1.15rem; color:var(--text-dim); font-style:italic;">
+    The lab's garage laboratory.
+  </p>
+
+  <SimPullQuote>
+    Earth, actually. I'm just good at listening.
+  </SimPullQuote>
+
+  <p>
+    The Living Architecture Lab is a garage laboratory in the Coachella Valley,
+    California. This is where the work actually happens. The bricks are made
+    here. The substrates are inoculated here. Contamination is managed here.
+    The myceliated structures grow on shelves and in trays in the desert heat.
+  </p>
+
+  <h2>What lives in the garage</h2>
+
+  <p>
+    Five reliable manufacturing methods for myceliated cardboard bricks. Rice
+    inoculation protocols. Living microclimate skin experiments — the SCOBY
+    analog that replaces plastic wrap in mycelium cultivation. Strength matrix
+    studies comparing Blue Oyster and Wine Cap substrates. The dirt-man pillow
+    cartridge prototype.
+  </p>
+
+  <p>
+    The lab runs on consumer-grade equipment, salvaged frames, agricultural
+    waste, and patient observation. The goal is reliability across the brick
+    scale before scaling up to the structure scale.
+  </p>
+
+  <h2>Photographs</h2>
+
+  <p style="color:var(--text-dim); font-style:italic;">
+    Photographic documentation is being prepared with Alice's release.
+    This page will populate with images of bricks, mycelium fronts,
+    contamination events, and the lab itself.
+  </p>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:1rem; margin: 1.5rem 0;">
+    <div style="aspect-ratio:1; background:var(--bg-deep); border:1px dashed var(--rule); display:grid; place-items:center; color:var(--text-dim); font-size:0.85rem; font-family:var(--mono);">[brick]</div>
+    <div style="aspect-ratio:1; background:var(--bg-deep); border:1px dashed var(--rule); display:grid; place-items:center; color:var(--text-dim); font-size:0.85rem; font-family:var(--mono);">[mycelium front]</div>
+    <div style="aspect-ratio:1; background:var(--bg-deep); border:1px dashed var(--rule); display:grid; place-items:center; color:var(--text-dim); font-size:0.85rem; font-family:var(--mono);">[lab bench]</div>
+  </div>
+
+  <h2>What the garden is for</h2>
+
+  <p>
+    The lab principle is <a href="/principles">Earth, Actually</a>. Substrate
+    engineering is a work of attention before it is a work of invention. The
+    garden is where the attention happens. What grows in the garage decides
+    what scales upward — to the structure, the organism, the territory, the planet.
+  </p>
+
+  <p>
+    Updates will appear here as the work progresses. Current status:
+  </p>
+
+  <table>
+    <tbody>
+      <tr><th>Active substrates</th><td>Cardboard, agricultural waste</td></tr>
+      <tr><th>Active organisms</th><td>Blue Oyster, Wine Cap (under matrix study)</td></tr>
+      <tr><th>Active prototypes</th><td>J1–J7 assembly patterns</td></tr>
+      <tr><th>Last update</th><td>{lastUpdated}</td></tr>
+    </tbody>
+  </table>
+
+  <hr style="margin:2.5rem 0; border:none; border-top:1px solid var(--rule);" />
+
+  <p style="font-size:0.95rem; color:var(--text-dim);">
+    See also: <a href="/scales/01-the-brick">Scale 1: The Brick</a> for the
+    architectural framework, and <a href="/projects/myceliated-bricks">the brick project page</a>
+    for the artifact specification.
+  </p>
+</PageLayout>

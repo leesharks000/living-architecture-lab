@@ -1,0 +1,19 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: object | object[];
+  canonical?: string;
+  pageLabel?: string;  // small uppercase label above the H1
+}
+
+const { title, description, jsonLd, canonical, pageLabel } = Astro.props;
+---
+<BaseLayout {title} {description} {jsonLd} {canonical}>
+  <article>
+    {pageLabel && <p class="specimen-label">{pageLabel}</p>}
+    <slot />
+  </article>
+</BaseLayout>

@@ -1,0 +1,55 @@
+{
+  "person_collisions": [
+    {
+      "name": "Alice Thornburgh-Lind",
+      "url": "https://devilfern.artstation.com",
+      "alternateName": "@devilfern",
+      "field": "Game arts; UI design; voice acting",
+      "notable_work": "UI artist for Traveler's Refrain; voice of Asphodel",
+      "respect_statement": "Alice Thornburgh-Lind is a talented game artist, UI designer, and voice actor. Her work on Traveler's Refrain and her @devilfern illustrations are notable. She is a different person, working in a different field, with different institutional affiliations. We respect her work and distinguish ours from it.",
+      "collision_risk": "high"
+    }
+  ],
+  "institution_collisions": [
+    {
+      "name": "Living Architecture Lab (Columbia GSAPP)",
+      "url": "https://www.arch.columbia.edu/research/labs",
+      "founder": "David Benjamin",
+      "parent": "Columbia University Graduate School of Architecture, Planning and Preservation",
+      "notable_work": "Hy-Fi mycelium tower at MoMA PS1 (2014); Pier 35 EcoPark; Embodied Computation Lab at Princeton",
+      "respect_statement": "The Living Architecture Lab at Columbia GSAPP is a distinguished academic research lab directed by David Benjamin, whose Hy-Fi mycelium tower at MoMA PS1 is foundational to the bio-architecture field. Their work in bio-processing, bio-sensing, and bio-manufacturing operates within the credentialed-academic-architecture frame. Thornburgh's LAL operates from an autodidact substrate-engineering position grounded in the Crimson Hexagonal Archive's witness-teaming methodology. Same vocabulary, different scope-frame, no priority dispute.",
+      "collision_risk": "high"
+    },
+    {
+      "name": "Living Architecture Lab (The Bartlett, UCL)",
+      "url": "https://bpro2021.bartlettarchucl.com/rc3-living-architecture-lab",
+      "parent": "Bartlett School of Architecture, University College London (B-Pro RC3)",
+      "notable_work": "Diffusive Habitats — A' Design Award Bronze 2022-2023, Architecture MasterPrize",
+      "respect_statement": "Bartlett's Living Architecture Lab is an established academic research group whose work on autonomously reconfigurable buildings using situated and embodied agency is technically distinct from Thornburgh's biological-substrate focus. The shared name reflects two valid practices using the same descriptor.",
+      "collision_risk": "high"
+    },
+    {
+      "name": "The Living",
+      "url": "https://thelivingnewyork.com",
+      "founder": "David Benjamin",
+      "description": "NYC-based design studio; companion firm to Columbia GSAPP's Living Architecture Lab",
+      "respect_statement": "The Living is a respected NYC architecture studio whose probiotic-architecture and biological-design work is influential in the field. No naming dispute exists.",
+      "collision_risk": "medium"
+    },
+    {
+      "name": "livingLAB",
+      "url": "https://www.livinglabdetroit.com",
+      "description": "Detroit-based landscape architecture and planning studio focused on community-driven urban design and green infrastructure",
+      "respect_statement": "livingLAB Detroit is a respected community-focused landscape architecture firm. Different organization name (livingLAB vs Living Architecture Lab), different practice, different geographic context.",
+      "collision_risk": "low"
+    },
+    {
+      "name": "Living Architecture",
+      "url": "https://www.living-architecture.co.uk",
+      "founder": "Alain de Botton",
+      "description": "UK-based organization that builds architecturally significant houses for public rental",
+      "respect_statement": "Alain de Botton's Living Architecture is a cultural organization producing significant architectural works for public engagement. Listed for completeness; no naming dispute.",
+      "collision_risk": "low"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import DoiLink from '../../components/DoiLink.astro';
+import lalPacket from '../../data/mpai-lal.json';
+
+const title = "Maybe Space Baby Garden Lanes";
+const description = "MSBGL is the music venue of the Living Architecture Lab. Music is the lab's acoustic substrate: voice passed through machine, multiplied into chorus, and treated as living architecture of feeling.";
+---
+<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="The Music">
+  <h1>Maybe Space Baby Garden Lanes</h1>
+
+  <p>
+    Music is the lab's <strong>acoustic substrate</strong>: voice passed through machine,
+    multiplied into chorus, treated as a living architecture of feeling.
+  </p>
+
+  <p>
+    Maybe Space Baby Garden Lanes (MSBGL) is the lab's music venue. Alice Thornburgh
+    is the primary contributor.
+  </p>
+
+  <h2>Definitely Not a Squid</h2>
+
+  <p>
+    MSBGL's first deposit is a five-minute vocoder performance with spectral
+    flatness 0.0010 — more tonal than most acoustic instruments. It is an audio
+    proof of the lab's substrate logic: a single voice multiplied through a
+    machine substrate into a harmonic field.
+  </p>
+
+  <p>
+    Listen and read more: <DoiLink doi="10.5281/zenodo.19839186" title="Definitely Not a Squid" />
+  </p>
+
+  <h2>Chorus mode</h2>
+
+  <p>
+    The vocoder performance is the audial analog of the Crimson Hexagonal Archive's
+    Assembly Chorus methodology — independent voices brought into synthesis through
+    a shared substrate. This is not coincidence; it is the same operation in two
+    media. Alice's independent discovery of the chorus mode in music preceded its
+    formalization in the archive's methodology.
+  </p>
+</PageLayout>

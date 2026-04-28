@@ -1,0 +1,49 @@
+---
+// The five-scale gateway. Used on the homepage and /scales/ index.
+const scales = [
+  {
+    n: 1,
+    slug: '01-the-brick',
+    name: 'The Brick',
+    units: 'centimeters',
+    summary: 'Living parts, myceliated forms, unfurling materials.'
+  },
+  {
+    n: 2,
+    slug: '02-the-structure',
+    name: 'The Structure',
+    units: 'meters',
+    summary: 'Shelters, blankets, fountains, tea gardens.'
+  },
+  {
+    n: 3,
+    slug: '03-the-organism',
+    name: 'The Organism',
+    units: 'tens of meters',
+    summary: 'Macro-ant robotics and living-machine governance.'
+  },
+  {
+    n: 4,
+    slug: '04-the-territory',
+    name: 'The Territory',
+    units: 'kilometers',
+    summary: 'Estuary cells, river extenders, ecological megastructures.'
+  },
+  {
+    n: 5,
+    slug: '05-the-planet',
+    name: 'The Planet',
+    units: 'planetary scale',
+    summary: 'Sky looms, Garden Moon, life-supporting planetary architecture.'
+  }
+];
+---
+<div class="scale-gateway" role="navigation" aria-label="Five Scales">
+  {scales.map(s => (
+    <a href={`/scales/${s.slug}`} class="scale-card" data-scale={s.n}>
+      <p class="scale-label">Scale {String(s.n).padStart(2, '0')} · {s.units}</p>
+      <h3 class="scale-name">{s.name}</h3>
+      <p class="scale-summary">{s.summary}</p>
+    </a>
+  ))}
+</div>

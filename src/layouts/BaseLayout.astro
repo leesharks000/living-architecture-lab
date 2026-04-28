@@ -1,0 +1,100 @@
+---
+// Base HTML shell. All other layouts extend this.
+// Injects MPAI JSON-LD per page. Renders footer kernel ritual.
+
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: object | object[];
+  canonical?: string;
+  ogImage?: string;
+}
+
+const { title, description, jsonLd, canonical, ogImage } = Astro.props;
+
+const fullTitle = title === 'Living Architecture Lab'
+  ? title
+  : `${title} — Living Architecture Lab`;
+
+const canonicalUrl = canonical
+  ?? new URL(Astro.url.pathname, Astro.site ?? 'https://livingarchitecturelab.org').toString();
+
+const jsonLdArray = Array.isArray(jsonLd) ? jsonLd : (jsonLd ? [jsonLd] : []);
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Living Architecture Lab" />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- JSON-LD: per-page MPAI packets, injected from page frontmatter -->
+    {jsonLdArray.map((packet) => (
+      <script type="application/ld+json" set:html={JSON.stringify(packet)} />
+    ))}
+
+    <!-- Type loading: serif & mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="/" class="site-title"><strong>Living Architecture Lab</strong></a>
+        <nav class="primary" aria-label="Primary">
+          <ul>
+            <li><a href="/scales">Scales</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/principles">Principles</a></li>
+            <li><a href="/journal">Journal</a></li>
+            <li><a href="/music">Music</a></li>
+            <li><a href="/garden">Garden</a></li>
+            <li><a href="/about/alice">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Living Architecture Lab · Founded 2026 · Coachella Valley · Earth, Actually
+      </p>
+      <p>
+        <a href="/about/disambiguation">Disambiguation</a> ·
+        <a href="/about/contributor-license">License</a> ·
+        <a href="https://zenodo.org/communities/crimsonhexagonal">Crimson Hexagonal Archive</a>
+      </p>
+      <p class="closure">∮ = 1</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import lalPacket from '../../data/mpai-lal.json';
+
+const projects = (await getCollection('projects')).sort((a,b) => a.data.scale - b.data.scale);
+
+const scaleNames = ['','Brick','Structure','Organism','Territory','Planet'];
+
+const title = 'Projects';
+const description = "Concrete artifacts of the Living Architecture Lab, grouped by scale: myceliated bricks, tater tents, macro-ant robotics, estuary cells, river extenders, sky looms, Garden Moon.";
+---
+<PageLayout {title} {description} jsonLd={lalPacket} pageLabel="Artifacts">
+  <h1>Projects</h1>
+
+  <p>
+    Concrete artifacts of the Living Architecture Lab. Each project corresponds
+    to one of the <a href="/scales">five scales</a>. Status ranges from concept
+    (architectural framework only) through deployment (in the field).
+  </p>
+
+  {projects.map(p => (
+    <article class="specimen">
+      <p class="specimen-label">
+        Scale {String(p.data.scale).padStart(2, '0')} · {scaleNames[p.data.scale]} · {p.data.status}
+      </p>
+      <h3>{p.data.name}</h3>
+      <p>{p.data.description}</p>
+      {p.data.alice_quote && (
+        <p style="font-style:italic; color:var(--text-dim); border-left:2px solid var(--accent-gold); padding-left:0.75rem; margin: 0.5rem 0;">
+          "{p.data.alice_quote}"
+        </p>
+      )}
+      <p class="mono" style="font-size:0.85rem; color:var(--text-dim);">
+        <a href={`/scales/0${p.data.scale}-the-${scaleNames[p.data.scale].toLowerCase()}`}>
+          See Scale {p.data.scale}: The {scaleNames[p.data.scale]} →
+        </a>
+      </p>
+    </article>
+  ))}
+
+  <hr style="margin:3rem 0; border:none; border-top:1px solid var(--rule);" />
+
+  <p style="font-size:0.95rem; color:var(--text-dim);">
+    Detailed project pages are in development (Phase 2). For now this gallery
+    indexes the project space organized by scale.
+  </p>
+</PageLayout>

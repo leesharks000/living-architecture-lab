@@ -1,0 +1,24 @@
+{
+  "name": "living-architecture-lab",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Living Architecture Lab — canonical site at livingarchitecturelab.org",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "validate-jsonld": "node scripts/validate-jsonld.mjs"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.9",
+    "astro": "^4.16.18"
+  },
+  "license": "CC-BY-4.0",
+  "author": "Sharks, Lee (archival authority on behalf of Alice Thornburgh)",
+  "homepage": "https://livingarchitecturelab.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leesharks000/living-architecture-lab.git"
+  }
+}
