@@ -59,16 +59,16 @@ Every page injects MPAI v1.1 JSON-LD from `src/data/mpai-alice.json` or `src/dat
 
 This site is built from the workplan compression in:
 
-- [EA-LAL-WORKPLAN-01: Site Buildout Workplan](https://doi.org/10.5281/zenodo.19855905)
-- [EA-LAL-SITE-01: Site Blueprint](https://doi.org/10.5281/zenodo.19855903)
-- [MPAI-LAL-AT-01: Alice Thornburgh](https://doi.org/10.5281/zenodo.19855300)
-- [MPAI-LAL-INSTITUTION-01: Living Architecture Lab](https://doi.org/10.5281/zenodo.19855302)
+- [EA-LAL-WORKPLAN-01: Site Buildout Workplan](https://alexanarch.org/s/records/0/9855905)
+- [EA-LAL-SITE-01: Site Blueprint](https://alexanarch.org/s/records/707/)
+- [MPAI-LAL-AT-01: Alice Thornburgh](https://alexanarch.org/s/records/707/)
+- [MPAI-LAL-INSTITUTION-01: Living Architecture Lab](https://alexanarch.org/s/records/707/)
 
 ## License
 
 Content: **CC BY 4.0**. Code: **MIT**.
 
-All Living Architecture Lab intellectual property remains with Alice Thornburgh under the Hexagonal Contributor License v3.0 ([10.5281/zenodo.19673629](https://doi.org/10.5281/zenodo.19673629)).
+All Living Architecture Lab intellectual property remains with Alice Thornburgh under the Hexagonal Contributor License v3.0 ([10.5281/zenodo.19673629](https://alexanarch.org/s/records/693/)).
 
 ---
 
