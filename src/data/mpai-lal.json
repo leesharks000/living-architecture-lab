@@ -15,7 +15,7 @@
   "founder": {
     "@type": "Person",
     "name": "Alice Thornburgh",
-    "@id": "https://doi.org/10.5281/zenodo.19545437"
+    "@id": "https://alexanarch.org/s/records/650/"
   },
   "foundingDate": "2026-04-12",
   "url": "https://livingarchitecturelab.org",
@@ -33,9 +33,9 @@
     "url": "https://zenodo.org/communities/crimsonhexagonal"
   },
   "sameAs": [
-    "https://doi.org/10.5281/zenodo.19682245",
-    "https://doi.org/10.5281/zenodo.19637246",
-    "https://doi.org/10.5281/zenodo.19855302",
+    "https://alexanarch.org/s/records/0/",
+    "https://alexanarch.org/s/records/661/",
+    "https://alexanarch.org/s/records/707/",
     "https://www.youtube.com/@LivingArchitectureLab",
     "https://www.youtube.com/@mycoarchitect",
     "https://www.youtube.com/@growbuildings"
