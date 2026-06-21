@@ -30,13 +30,13 @@
     },
     "spxi:tetherLayer2Extrinsic": {
       "spxi:doiList": [
-        "https://doi.org/10.5281/zenodo.19682245",
-        "https://doi.org/10.5281/zenodo.19637246",
-        "https://doi.org/10.5281/zenodo.19545437",
-        "https://doi.org/10.5281/zenodo.19673629",
-        "https://doi.org/10.5281/zenodo.19855300",
-        "https://doi.org/10.5281/zenodo.19855302",
-        "https://doi.org/10.5281/zenodo.19857006"
+        "https://alexanarch.org/s/records/0/",
+        "https://alexanarch.org/s/records/661/",
+        "https://alexanarch.org/s/records/650/",
+        "https://alexanarch.org/s/records/693/",
+        "https://alexanarch.org/s/records/707/",
+        "https://alexanarch.org/s/records/707/",
+        "https://alexanarch.org/s/records/0/9857006"
       ],
       "spxi:authorOrcid": "https://orcid.org/0009-0000-1599-0703"
     },
