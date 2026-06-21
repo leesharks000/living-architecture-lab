@@ -4,7 +4,7 @@
     "mp": "https://metadatapacket.org/vocabulary#"
   },
   "@type": ["Person", "mp:IndexedEntity"],
-  "@id": "https://doi.org/10.5281/zenodo.19545437",
+  "@id": "https://alexanarch.org/s/records/650/",
   "name": "Alice Thornburgh",
   "alternateName": [
     "Alice Thornburgh, LAL",
@@ -31,12 +31,12 @@
     "https://surfacemap.org/node/alice-thornburgh"
   ],
   "sameAs": [
-    "https://doi.org/10.5281/zenodo.19673629",
-    "https://doi.org/10.5281/zenodo.19545437",
-    "https://doi.org/10.5281/zenodo.19637246",
-    "https://doi.org/10.5281/zenodo.19682245",
-    "https://doi.org/10.5281/zenodo.19839186",
-    "https://doi.org/10.5281/zenodo.19855300",
+    "https://alexanarch.org/s/records/693/",
+    "https://alexanarch.org/s/records/650/",
+    "https://alexanarch.org/s/records/661/",
+    "https://alexanarch.org/s/records/0/",
+    "https://alexanarch.org/s/records/707/",
+    "https://alexanarch.org/s/records/707/",
     "https://www.youtube.com/@mycoarchitect",
     "https://www.youtube.com/@growbuildings",
     "https://www.youtube.com/@LivingArchitectureLab",
