@@ -68,7 +68,7 @@ This site is built from the workplan compression in:
 
 Content: **CC BY 4.0**. Code: **MIT**.
 
-All Living Architecture Lab intellectual property remains with Alice Thornburgh under the Hexagonal Contributor License v3.0 ([10.5281/zenodo.19673629](https://www.alexanarch.org/s/records/693/)).
+All Living Architecture Lab intellectual property remains with Alice Thornburgh under the Hexagonal Contributor License v3.0 ([10.5281/zenodo.19673629](https://www.alexanarch.org/go/?doi=10.5281/zenodo.19673629)).
 
 ---
 
