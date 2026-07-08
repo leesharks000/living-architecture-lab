@@ -61,8 +61,8 @@ This site is built from the workplan compression in:
 
 - [EA-LAL-WORKPLAN-01: Site Buildout Workplan](https://www.alexanarch.org/s/records/0/9855905)
 - [EA-LAL-SITE-01: Site Blueprint](https://www.alexanarch.org/s/records/707/)
-- [MPAI-LAL-AT-01: Alice Thornburgh](https://www.alexanarch.org/s/records/707/)
-- [MPAI-LAL-INSTITUTION-01: Living Architecture Lab](https://www.alexanarch.org/s/records/707/)
+- [MPAI-LAL-AT-01: Alice Thornburgh](https://www.alexanarch.org/s/records/710/)
+- [MPAI-LAL-INSTITUTION-01: Living Architecture Lab](https://www.alexanarch.org/s/records/709/)
 
 ## License
 
