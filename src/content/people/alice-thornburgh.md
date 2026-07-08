@@ -1,7 +1,7 @@
 ---
 name: Alice Thornburgh
 role: Founding Director, Living Architecture Lab
-mpai_doi: "10.5281/zenodo.19855301"
+mpai_doi: "10.5281/zenodo.19855300"
 pronouns: she/her
 ---
 
