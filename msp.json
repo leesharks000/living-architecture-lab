@@ -1,0 +1,20 @@
+{
+  "surface_id": "livingarchitecturelab.org",
+  "canonical_url": "https://livingarchitecturelab.org/",
+  "axn": "AXN:024F.GOVERNANCE.🛸🏠🧊🌘❌🌺",
+  "deposit_number": 708,
+  "title": "Living Architecture Lab",
+  "object_state": "canonical",
+  "tier": 1,
+  "register": "narrative",
+  "skin": {},
+  "doors": [
+    {"label": "Read the deposit", "href": "https://www.alexanarch.org/s/records/708/"},
+    {"label": "The scales", "href": "/scales"},
+    {"label": "The garden", "href": "/garden"}
+  ],
+  "index_files": [],
+  "notes": "Anchor is #708 (GOVERNANCE family, 2026-04-28), titled 'Living Architecture Lab — Site Blueprint A Compressed Architecture for livingarchitecturelab.org'. Direct site-blueprint match. Related anchors: #707 (site buildout workplan) and #59 (LAL charter). \n\nAPPARATUS APPLICATION DEFERRED — the repo is Astro-based; source lives in src/pages/*.astro and src/layouts/BaseLayout.astro. The static-HTML applicator does not map cleanly onto Astro because: (a) BaseLayout is a template compiled at build time, not a servable HTML file; (b) the colophon's render_sha256 semantics require hashing the rendered HTML, which only exists in dist/ after `astro build`; (c) lemma marking requires either manual .astro edits or a rehype/remark transform integrated into the Astro pipeline. \n\nProper integration design (own session): (1) create src/layouts/msp/MspIdstrip.astro, MspColophon.astro, MspDoors.astro; (2) extend BaseLayout to include them, accepting optional per-page axn/deposit props; (3) add src/data/msp.json readable by layouts at build time; (4) build-time post-process script that computes render_sha256 across dist/**/*.html with the self-excluded convention; (5) either manual lemma marking on prose pages, or an Astro-integrations remark plugin. Reference commit for anchor-acceptance is separately preserved in the parent MSP-ROLLOUT worklog.",
+  "_apparatus_deferred": true,
+  "_apparatus_deferred_reason": "Astro build pipeline requires build-time integration, not static-HTML injection. See notes for design sketch."
+}
