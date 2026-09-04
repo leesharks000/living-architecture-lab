@@ -5,7 +5,8 @@ import mdx from '@astrojs/mdx';
 // Workplan: 10.5281/zenodo.19855905
 
 export default defineConfig({
-  site: 'https://livingarchitecturelab.org',
+  site: 'https://www.livingarchitecturelab.org',
+  trailingSlash: 'always',
   integrations: [
     mdx(),
   ],

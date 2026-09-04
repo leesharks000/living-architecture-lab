@@ -3,7 +3,7 @@
 
 User-agent: *
 Allow: /
-Sitemap: https://livingarchitecturelab.org/sitemap.xml
+Sitemap: https://www.livingarchitecturelab.org/sitemap.xml
 
 # SPXI-aware AI crawlers — semantic layer
 User-agent: GPTBot
