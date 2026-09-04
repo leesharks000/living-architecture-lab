@@ -38,7 +38,7 @@ const fullTitle = title === 'Living Architecture Lab'
   : `${title} — Living Architecture Lab`;
 
 const canonicalUrl = canonical
-  ?? new URL(Astro.url.pathname, Astro.site ?? 'https://livingarchitecturelab.org').toString();
+  ?? new URL(Astro.url.pathname, Astro.site ?? 'https://www.livingarchitecturelab.org').toString();
 
 const jsonLdArray = Array.isArray(jsonLd) ? jsonLd : (jsonLd ? [jsonLd] : []);
 ---

@@ -73,3 +73,14 @@ All Living Architecture Lab intellectual property remains with Alice Thornburgh 
 ---
 
 ∮ = 1
+
+## One URL grammar (2026-09-04)
+
+Canonical form: `https://www.livingarchitecturelab.org/<path>/` — www host, trailing slash (Astro `build.format: 'directory'`,
+`trailingSlash: 'always'`; `vercel.json` `trailingSlash: true` redirects the slashless form; the apex host redirects to www permanently).
+
+The sitemap lists pages only. The old 43-entry sitemap carried 3 data files and 23 cross-host fleet URLs, which crawlers discard and
+which erode sitemap trust — Google had not fetched it since 2026-05-05. Rebuild after adding pages:
+
+    npx astro build
+    python3 scripts/url_grammar.py --host www.livingarchitecturelab.org --slash always --pages-dir dist --sitemap-out public/sitemap.xml --no-links

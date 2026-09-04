@@ -1,0 +1,6 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "livingarchitecturelab.org" }], "destination": "https://www.livingarchitecturelab.org/:path*", "permanent": true }
+  ]
+}
