@@ -54,6 +54,12 @@ const jsonLdArray = Array.isArray(jsonLd) ? jsonLd : (jsonLd ? [jsonLd] : []);
     <meta name="author" content={author} />
     {datePublished && <meta name="article:published_time" content={datePublished} />}
     {dateModified && <meta name="article:modified_time" content={dateModified} />}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalUrl} />
 
     {sims.map(sim => <meta name="spxi:sim" content={sim} />)}
@@ -63,8 +69,6 @@ const jsonLdArray = Array.isArray(jsonLd) ? jsonLd : (jsonLd ? [jsonLd] : []);
     <meta name="spxi:protocol" content="EA-SPXI-WEB-01 v3.0 (10.5281/zenodo.19734726)" />
 
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
