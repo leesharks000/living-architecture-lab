@@ -37,7 +37,7 @@ Per §VII implementation order:
 - Type: ResearchOrganization, mp:IndexedEntity
 - Holographic Kernel: https://livingarchitecturelab.org/#kernel
 - Anchored DOI: 10.5281/zenodo.19682245
-- ORCID: 0009-0000-1599-0703
+- Deposited under: Lee Sharks, ORCID 0009-0000-1599-0703 (the depositor's, not the lab's or its founder's)
 
 ### Alice Thornburgh (founding entity)
 - URL: https://livingarchitecturelab.org/about/alice
@@ -45,7 +45,7 @@ Per §VII implementation order:
 - Type: Person, mp:IndexedEntity
 - Holographic Kernel: https://livingarchitecturelab.org/about/alice/#kernel
 - Anchored DOI: 10.5281/zenodo.19545437
-- ORCID: 0009-0000-1599-0703
+- ORCID: none yet (her materials are deposited under Lee Sharks's ORCID, which is his, not hers)
 
 ## Three-Layer Tether Architecture
 

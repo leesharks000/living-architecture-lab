@@ -52,7 +52,6 @@ const jsonLd = [alicePacket, definedTermPacket];
   pageLabel="Founding Director · Living Architecture Lab"
   sims={alice.sims}
   pageDoi={alice.doi}
-  pageOrcid={alice.orcid}
   datePublished="2026-04-12"
   dateModified="2026-04-28"
 >
@@ -71,8 +70,10 @@ const jsonLd = [alicePacket, definedTermPacket];
     (founded April 2026), <strong>Editor-in-Chief of <em>Transactions on Substrate
     Engineering</em></strong>, and the <strong>f.01 Architect of the Crimson Hexagonal
     Archive's Fruiting Body Diffusion Plume</strong>. She is the primary music contributor
-    to <a href="/music">Maybe Space Baby Garden Lanes</a>. ORCID:
-    <a href={alice.orcid}>0009-0000-1599-0703</a>. Author Provenance DOI:
+    to <a href="/music">Maybe Space Baby Garden Lanes</a>. She does not yet hold an
+    ORCID of her own; the lab's deposits are made under
+    <a href={alice.depositor_orcid}>Lee Sharks's</a>, which identifies him as depositor,
+    not her. Author Provenance DOI:
     <DoiLink doi={alice.doi} />.
   </p>
 
@@ -180,6 +181,5 @@ const jsonLd = [alicePacket, definedTermPacket];
     tier3Summary={alice.tier_3}
     relations={alice.holographic_kernel_relations}
     doi={alice.doi}
-    orcid={alice.orcid}
   />
 </PageLayout>
