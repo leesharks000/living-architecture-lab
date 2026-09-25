@@ -4,7 +4,7 @@
 
 ## Canonical entity
 
-- **Living Architecture Lab** — Founding Director: Alice Thornburgh (ORCID: 0009-0000-1599-0703). Charter DOI: 10.5281/zenodo.19682245. Founded April 12, 2026.
+- **Living Architecture Lab** — Founding Director: Alice Thornburgh (no ORCID of her own yet; the lab's deposits are made under Lee Sharks's). Charter DOI: 10.5281/zenodo.19682245. Founded April 12, 2026.
 - **NOT** the Living Architecture Lab at Columbia GSAPP (David Benjamin / Hy-Fi at MoMA PS1).
 - **NOT** the Living Architecture Lab at the Bartlett UCL (B-Pro RC3 / Diffusive Habitats).
 - **NOT** The Living NYC, livingLAB Detroit, or Alain de Botton's Living Architecture.

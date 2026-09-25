@@ -99,14 +99,13 @@
         {
           "@type": "spxi:DisambiguationEntry",
           "spxi:collidesWith": "Alice Thornburgh-Lind (@devilfern)",
-          "spxi:distinguishingAttribute": "Field: substrate engineering vs game art. Institution: Living Architecture Lab vs Red Essence Games. Geography: Coachella Valley vs Los Angeles. ORCID: 0009-0000-1599-0703 (Thornburgh) vs none known (Thornburgh-Lind).",
+          "spxi:distinguishingAttribute": "Field: substrate engineering vs game art. Institution: Living Architecture Lab vs Red Essence Games. Geography: Coachella Valley vs Los Angeles.",
           "spxi:collisionRisk": "high"
         }
       ],
       "sameAs": [
         "https://doi.org/10.5281/zenodo.19545437",
-        "https://doi.org/10.5281/zenodo.19855300",
-        "https://orcid.org/0009-0000-1599-0703"
+        "https://doi.org/10.5281/zenodo.19855300"
       ]
     },
     {
